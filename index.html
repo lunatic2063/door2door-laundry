@@ -130,7 +130,8 @@
     .hero-content {
       position: relative; z-index: 2;
       padding: 80px 5%;
-      max-width: 680px;
+      max-width: 780px;
+      width: 100%;
     }
 
     .hero-badge {
@@ -215,8 +216,8 @@
     .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: white; }
 
     .hero-stats {
-      position: absolute; bottom: 60px; right: 5%;
       display: flex; gap: 40px;
+      margin-top: 52px;
       animation: fadeUp 0.6s 0.6s ease both;
     }
     .stat { text-align: center; }
@@ -781,7 +782,7 @@
     /* ──────────────── RESPONSIVE ──────────────── */
     @media (max-width: 900px) {
       .nav-links { display: none; }
-      .hero-stats { position: static; margin-top: 50px; justify-content: flex-start; }
+      .hero-stats { gap: 24px; }
       .why-grid { grid-template-columns: 1fr; }
       .why-card-stack { height: 300px; }
       .quote-wrap { grid-template-columns: 1fr; gap: 50px; }
@@ -928,7 +929,7 @@
       <span class="service-icon">👕</span>
       <h3>Wash & Fold</h3>
       <p>Your everyday laundry washed, dried, and neatly folded with care. Perfect for weekly loads and busy households.</p>
-      <span class="service-price">Starting at $1.50/lb</span>
+      <span class="service-price">Starting at $2.00/lb</span>
     </div>
     <div class="service-card reveal reveal-delay-2">
       <span class="service-icon">👔</span>
@@ -1035,7 +1036,7 @@
   <div class="pricing-grid">
     <div class="pricing-card reveal reveal-delay-1">
       <div class="pricing-name">Basic</div>
-      <div class="pricing-price">$1.50</div>
+      <div class="pricing-price">$2.00</div>
       <div class="pricing-unit">per pound · one-time</div>
       <ul class="pricing-features">
         <li><span class="check">✓</span> Wash & Fold service</li>
@@ -1050,7 +1051,7 @@
     <div class="pricing-card featured reveal reveal-delay-2">
       <span class="badge-popular">Most Popular</span>
       <div class="pricing-name">Weekly Plan</div>
-      <div class="pricing-price">$1.28</div>
+      <div class="pricing-price">$1.75</div>
       <div class="pricing-unit">per pound · billed weekly</div>
       <ul class="pricing-features">
         <li><span class="check">✓</span> Everything in Basic</li>
@@ -1258,7 +1259,7 @@
         </div>
         <div class="contact-row">
           <span class="contact-icon">📧</span>
-          <span>hello@door2doorlaundry.com</span>
+          <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="aec6cbc2c2c1eecac1c1dc9ccac1c1dcc2cfdbc0cadcd780cdc1c3">[email&#160;protected]</a></span>
         </div>
         <div class="contact-row">
           <span class="contact-icon">⏰</span>
@@ -1278,7 +1279,7 @@
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
@@ -1314,12 +1315,4 @@
   window.addEventListener('scroll', () => {
     let current = '';
     sections.forEach(s => {
-      if (window.scrollY >= s.offsetTop - 120) current = s.getAttribute('id');
-    });
-    navLinks.forEach(a => {
-      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--sky)' : '';
-    });
-  });
-</script>
-</body>
-</html>
+  
