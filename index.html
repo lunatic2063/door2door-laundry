@@ -1115,96 +1115,6 @@
   </div>
 </section>
 
-<!-- QUOTE FORM -->
-<section class="section" id="quote">
-  <div class="quote-wrap">
-    <div class="quote-info reveal">
-      <div class="section-label">Free Estimate</div>
-      <div class="section-title">Get Your<br>Custom <span style="color:var(--sky-light);">Quote</span></div>
-      <p class="section-desc" style="color:rgba(255,255,255,0.65);">Fill out the form and we'll get back to you within a few hours with a personalized quote — completely free, no obligation.</p>
-      <ul class="quote-perks">
-        <li><span class="perk-icon">⚡</span> Response within 2–4 hours</li>
-        <li><span class="perk-icon">💰</span> No hidden fees, ever</li>
-        <li><span class="perk-icon">📅</span> Flexible scheduling to fit your life</li>
-        <li><span class="perk-icon">🔒</span> Your info is private & secure</li>
-      </ul>
-    </div>
-
-    <div class="quote-form reveal reveal-delay-1">
-      <h3>Request a Free Quote</h3>
-      <div id="form-body">
-        <div class="form-row">
-          <div class="form-group">
-            <label>First Name *</label>
-            <input type="text" id="fname" placeholder="Jane" required />
-          </div>
-          <div class="form-group">
-            <label>Last Name *</label>
-            <input type="text" id="lname" placeholder="Smith" required />
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Email Address *</label>
-          <input type="email" id="email" placeholder="jane@example.com" required />
-        </div>
-        <div class="form-group">
-          <label>Phone Number</label>
-          <input type="tel" id="phone" placeholder="(555) 000-0000" />
-        </div>
-        <div class="form-group">
-          <label>Zip Code / Area *</label>
-          <input type="text" id="zip" placeholder="Enter your zip code" required />
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Service Needed *</label>
-            <select id="service">
-              <option value="">— Select a Service —</option>
-              <option>Wash & Fold</option>
-              <option>Dry Cleaning</option>
-              <option>Bedding & Linens</option>
-              <option>Specialty Items</option>
-              <option>Commercial Service</option>
-              <option>Weekly Subscription</option>
-              <option>Multiple Services</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Estimated Load Size</label>
-            <select id="size">
-              <option value="">— Approximate Size —</option>
-              <option>Small (under 10 lbs)</option>
-              <option>Medium (10–20 lbs)</option>
-              <option>Large (20–40 lbs)</option>
-              <option>Extra Large (40+ lbs)</option>
-              <option>Commercial Volume</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Preferred Pickup Day</label>
-          <input type="date" id="pickup" />
-        </div>
-        <div class="form-group">
-          <label>Special Instructions or Questions</label>
-          <textarea id="notes" placeholder="Any allergies, special fabrics, instructions, or questions…"></textarea>
-        </div>
-        <button class="form-submit" onclick="submitForm()">
-          Send My Quote Request →
-        </button>
-        <p class="form-note">🔒 We respect your privacy. No spam, ever.</p>
-      </div>
-      <div class="form-success" id="form-success">
-        <div class="success-icon">🎉</div>
-        <h4>Request Received!</h4>
-        <p>Thank you! We'll reach out to you within 2–4 hours with your custom quote. Check your email for a confirmation.</p>
-        <br>
-        <p style="color:var(--sky); font-weight:600; font-family:'Montserrat',sans-serif; font-size:0.9rem;">We pick up. We clean. We deliver.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- FOOTER -->
 <footer>
   <div class="footer-grid">
@@ -1271,26 +1181,6 @@
 </footer>
 
 <script>
-// Form submit
-  function submitForm() {
-    const fname = document.getElementById('fname').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const zip = document.getElementById('zip').value.trim();
-    const service = document.getElementById('service').value;
-
-    if (!fname || !email || !zip || !service) {
-      alert('Please fill in all required fields (marked with *).');
-      return;
-    }
-    if (!email.includes('@')) {
-      alert('Please enter a valid email address.');
-      return;
-    }
-
-    document.getElementById('form-body').style.display = 'none';
-    document.getElementById('form-success').style.display = 'block';
-  }
-
   // Smooth nav highlight
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-links a');
