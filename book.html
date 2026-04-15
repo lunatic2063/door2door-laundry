@@ -6,212 +6,265 @@
 <title>Book Your Pickup — Door2Door Laundry Co.</title>
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Nunito:ital,wght@0,200;0,300;0,400;0,600;1,300&display=swap" rel="stylesheet"/>
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { background: #f0f4f8; font-family: 'Nunito', sans-serif; color: #1e293b; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #f0f4f8; font-family: 'Nunito', sans-serif; color: #1e293b; }
 
-.nav {
-  background: linear-gradient(135deg, #0a2463, #1b4fa8);
-  padding: 16px 40px;
-  display: flex; align-items: center; justify-content: space-between;
-}
-.nav-brand { font-family: 'Quicksand', sans-serif; font-size: 22px; font-weight: 700; color: #fff; text-decoration: none; }
-.nav-brand span { color: #4fc3f7; }
-.nav-tag { font-size: 11px; letter-spacing: 2px; color: rgba(255,255,255,0.55); text-transform: uppercase; }
-.nav-back {
-  font-family: 'Quicksand', sans-serif; font-size: 12px; font-weight: 600;
-  color: rgba(255,255,255,0.85); text-decoration: none; letter-spacing: 1px;
-  text-transform: uppercase; padding: 8px 14px; border: 1px solid rgba(255,255,255,0.3);
-  border-radius: 20px; transition: background 0.2s;
-}
-.nav-back:hover { background: rgba(255,255,255,0.12); }
+  .nav {
+    background: linear-gradient(135deg, #0a2463, #1b4fa8);
+    padding: 16px 40px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-brand { font-family: 'Quicksand', sans-serif; font-size: 22px; font-weight: 700; color: #fff; }
+  .nav-brand span { color: #4fc3f7; }
+  .nav-tag { font-size: 11px; letter-spacing: 2px; color: rgba(255,255,255,0.55); text-transform: uppercase; }
 
-.hero {
-  background: linear-gradient(135deg, #0a2463 0%, #1b4fa8 60%, #1e7fc2 100%);
-  padding: 50px 40px 40px; text-align: center; position: relative; overflow: hidden;
-}
-.hero::before {
-  content: ''; position: absolute; top: -60px; right: -60px;
-  width: 250px; height: 250px; border-radius: 50%; background: rgba(255,255,255,0.05);
-}
-.hero h1 { font-family: 'Quicksand', sans-serif; font-size: 40px; font-weight: 700; color: #fff; margin-bottom: 10px; }
-.hero h1 span { color: #4fc3f7; }
-.hero p { font-size: 16px; color: rgba(255,255,255,0.75); font-weight: 300; font-style: italic; }
-.hero-badges { display: flex; justify-content: center; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
-.hero-badge {
-  background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3);
-  color: #fff; font-size: 12px; font-weight: 600; padding: 6px 16px;
-  border-radius: 50px; font-family: 'Quicksand', sans-serif; letter-spacing: 0.5px;
-}
-.hero-badge.green { background: #4caf50; border-color: #4caf50; }
+  .hero {
+    background: linear-gradient(135deg, #0a2463 0%, #1b4fa8 60%, #1e7fc2 100%);
+    padding: 50px 40px 40px; text-align: center; position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; top: -60px; right: -60px;
+    width: 250px; height: 250px; border-radius: 50%; background: rgba(255,255,255,0.05);
+  }
+  .hero h1 { font-family: 'Quicksand', sans-serif; font-size: 40px; font-weight: 700; color: #fff; margin-bottom: 10px; }
+  .hero h1 span { color: #4fc3f7; }
+  .hero p { font-size: 16px; color: rgba(255,255,255,0.75); font-weight: 300; font-style: italic; }
+  .hero-badges { display: flex; justify-content: center; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+  .hero-badge {
+    background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3);
+    color: #fff; font-size: 12px; font-weight: 600; padding: 6px 16px;
+    border-radius: 50px; font-family: 'Quicksand', sans-serif; letter-spacing: 0.5px;
+  }
+  .hero-badge.green { background: #4caf50; border-color: #4caf50; }
 
-.main { max-width: 860px; margin: 0 auto; padding: 40px 20px 60px; display: flex; flex-direction: column; gap: 28px; }
+  .main { max-width: 860px; margin: 0 auto; padding: 40px 20px 60px; display: flex; flex-direction: column; gap: 28px; }
 
-.card {
-  background: #fff; border-radius: 16px; padding: 32px;
-  box-shadow: 0 2px 16px rgba(10,36,99,0.08); border: 1.5px solid #e2e8f0;
-}
-.card-title {
-  font-family: 'Quicksand', sans-serif; font-size: 20px; font-weight: 700;
-  color: #0a2463; margin-bottom: 6px; display: flex; align-items: center; gap: 10px;
-}
-.card-sub { font-size: 13px; color: #64748b; font-weight: 300; margin-bottom: 22px; }
+  .card {
+    background: #fff; border-radius: 16px; padding: 32px;
+    box-shadow: 0 2px 16px rgba(10,36,99,0.08); border: 1.5px solid #e2e8f0;
+  }
+  .card-title {
+    font-family: 'Quicksand', sans-serif; font-size: 20px; font-weight: 700;
+    color: #0a2463; margin-bottom: 6px; display: flex; align-items: center; gap: 10px;
+  }
+  .card-sub { font-size: 13px; color: #64748b; font-weight: 300; margin-bottom: 22px; }
 
-/* PRICING */
-.pricing-table { display: flex; flex-direction: column; gap: 10px; }
-.price-row {
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 14px 20px; border-radius: 10px; background: #f8fafc; border: 1.5px solid #e2e8f0;
-}
-.price-row.featured { background: linear-gradient(135deg, #0a2463, #1b4fa8); border-color: #1b4fa8; }
-.price-row.featured .price-name { color: #fff; }
-.price-row.featured .price-desc { color: rgba(255,255,255,0.65); }
-.price-row.featured .price-val { color: #4fc3f7; }
-.price-name { font-family: 'Quicksand', sans-serif; font-weight: 600; font-size: 15px; color: #0a2463; }
-.price-desc { font-size: 12px; color: #64748b; font-weight: 300; margin-top: 2px; }
-.price-val { font-family: 'Quicksand', sans-serif; font-size: 22px; font-weight: 700; color: #0a2463; }
-.upcharge { font-size: 14px; color: #f59e0b; font-weight: 700; }
-.free-val { font-size: 14px; color: #4caf50; font-weight: 700; }
+  /* PRICING */
+  .pricing-table { display: flex; flex-direction: column; gap: 10px; }
+  .price-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 14px 20px; border-radius: 10px; background: #f8fafc; border: 1.5px solid #e2e8f0;
+  }
+  .price-row.featured { background: linear-gradient(135deg, #0a2463, #1b4fa8); border-color: #1b4fa8; }
+  .price-row.featured .price-name { color: #fff; }
+  .price-row.featured .price-desc { color: rgba(255,255,255,0.65); }
+  .price-row.featured .price-val { color: #4fc3f7; }
+  .price-name { font-family: 'Quicksand', sans-serif; font-weight: 600; font-size: 15px; color: #0a2463; }
+  .price-desc { font-size: 12px; color: #64748b; font-weight: 300; margin-top: 2px; }
+  .price-val { font-family: 'Quicksand', sans-serif; font-size: 22px; font-weight: 700; color: #0a2463; }
+  .upcharge { font-size: 14px; color: #f59e0b; font-weight: 700; }
+  .free-val { font-size: 14px; color: #4caf50; font-weight: 700; }
 
-.bag-note {
-  background: #fff8e1; border: 1.5px solid #fde047; border-radius: 10px;
-  padding: 14px 18px; font-size: 13px; color: #92400e; margin-top: 14px;
-  display: flex; gap: 10px; align-items: flex-start; line-height: 1.6;
-}
+  .bag-note {
+    background: #fff8e1; border: 1.5px solid #fde047; border-radius: 10px;
+    padding: 14px 18px; font-size: 13px; color: #92400e; margin-top: 14px;
+    display: flex; gap: 10px; align-items: flex-start; line-height: 1.6;
+  }
 
-/* SCHEDULE */
-.schedule-note {
-  background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 10px;
-  padding: 12px 18px; font-size: 13px; color: #1e40af; margin-bottom: 18px;
-  display: flex; align-items: center; gap: 10px; font-weight: 400;
-}
-.days-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 22px; }
-.day-card {
-  border: 2px solid #e2e8f0; border-radius: 12px; padding: 18px 10px;
-  text-align: center; cursor: pointer; transition: all 0.2s; background: #f8fafc;
-}
-.day-card:hover { border-color: #1b4fa8; background: #eff6ff; }
-.day-card.selected { border-color: #1b4fa8; background: #1b4fa8; }
-.day-card.selected .day-name { color: #fff; }
-.day-card.selected .day-sub { color: rgba(255,255,255,0.7); }
-.day-emoji { font-size: 24px; margin-bottom: 8px; }
-.day-name { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 17px; color: #0a2463; margin-bottom: 3px; }
-.day-sub { font-size: 11px; color: #94a3b8; }
+  /* SCHEDULE */
+  .schedule-note {
+    background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 10px;
+    padding: 12px 18px; font-size: 13px; color: #1e40af; margin-bottom: 18px;
+    display: flex; align-items: center; gap: 10px; font-weight: 400;
+  }
+  .days-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 22px; }
+  .day-card {
+    border: 2px solid #e2e8f0; border-radius: 12px; padding: 18px 10px;
+    text-align: center; cursor: pointer; transition: all 0.2s; background: #f8fafc;
+  }
+  .day-card:hover { border-color: #1b4fa8; background: #eff6ff; }
+  .day-card.selected { border-color: #1b4fa8; background: #1b4fa8; }
+  .day-card.selected .day-name { color: #fff; }
+  .day-card.selected .day-sub { color: rgba(255,255,255,0.7); }
+  .day-emoji { font-size: 24px; margin-bottom: 8px; }
+  .day-name { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 17px; color: #0a2463; margin-bottom: 3px; }
+  .day-sub { font-size: 11px; color: #94a3b8; }
 
-.time-label {
-  font-family: 'Quicksand', sans-serif; font-size: 13px; font-weight: 600;
-  color: #0a2463; margin-bottom: 10px;
-}
-.time-slots { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
-.time-slot {
-  padding: 14px 10px; border: 1.5px solid #cbd5e1; border-radius: 10px;
-  text-align: center; cursor: pointer; font-family: 'Quicksand', sans-serif;
-  font-size: 14px; font-weight: 600; color: #475569; background: #f8fafc;
-  transition: all 0.2s; user-select: none;
-}
-.time-slot .slot-time { font-size: 16px; color: #0a2463; margin-bottom: 3px; }
-.time-slot .slot-desc { font-size: 11px; color: #94a3b8; font-weight: 400; }
-.time-slot:hover { border-color: #1b4fa8; background: #eff6ff; }
-.time-slot:hover .slot-time { color: #1b4fa8; }
-.time-slot.selected { border-color: #1b4fa8; background: #1b4fa8; }
-.time-slot.selected .slot-time { color: #fff; }
-.time-slot.selected .slot-desc { color: rgba(255,255,255,0.7); }
+  .time-label {
+    font-family: 'Quicksand', sans-serif; font-size: 13px; font-weight: 600;
+    color: #0a2463; margin-bottom: 10px;
+  }
+  .time-slots { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .time-slot {
+    padding: 14px 10px; border: 1.5px solid #cbd5e1; border-radius: 10px;
+    text-align: center; cursor: pointer; font-family: 'Quicksand', sans-serif;
+    font-size: 14px; font-weight: 600; color: #475569; background: #f8fafc;
+    transition: all 0.2s; user-select: none;
+  }
+  .time-slot .slot-time { font-size: 16px; color: #0a2463; margin-bottom: 3px; }
+  .time-slot .slot-desc { font-size: 11px; color: #94a3b8; font-weight: 400; }
+  .time-slot:hover { border-color: #1b4fa8; background: #eff6ff; }
+  .time-slot:hover .slot-time { color: #1b4fa8; }
+  .time-slot.selected { border-color: #1b4fa8; background: #1b4fa8; }
+  .time-slot.selected .slot-time { color: #fff; }
+  .time-slot.selected .slot-desc { color: rgba(255,255,255,0.7); }
 
-/* FORM */
-.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.form-group { display: flex; flex-direction: column; gap: 6px; }
-.form-group.full { grid-column: 1 / -1; }
-label { font-family: 'Quicksand', sans-serif; font-size: 13px; font-weight: 600; color: #0a2463; }
-label .req { color: #ef4444; margin-left: 2px; }
-.badge-tag {
-  font-size: 10px; font-weight: 700; padding: 2px 8px;
-  border-radius: 20px; margin-left: 6px; vertical-align: middle;
-}
-.badge-up { background: #fef3c7; color: #92400e; }
-.badge-free { background: #dcfce7; color: #166534; }
+  /* FORM */
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+  .form-group.full { grid-column: 1 / -1; }
+  label { font-family: 'Quicksand', sans-serif; font-size: 13px; font-weight: 600; color: #0a2463; }
+  label .req { color: #ef4444; margin-left: 2px; }
+  .badge-tag {
+    font-size: 10px; font-weight: 700; padding: 2px 8px;
+    border-radius: 20px; margin-left: 6px; vertical-align: middle;
+  }
+  .badge-up { background: #fef3c7; color: #92400e; }
+  .badge-free { background: #dcfce7; color: #166534; }
 
-input, select, textarea {
-  padding: 11px 14px; border: 1.5px solid #cbd5e1; border-radius: 8px;
-  font-family: 'Nunito', sans-serif; font-size: 14px; color: #1e293b;
-  background: #f8fafc; outline: none; transition: border-color 0.2s; width: 100%;
-  appearance: auto;
-}
-input:focus, select:focus, textarea:focus { border-color: #1b4fa8; background: #fff; }
-.hint { font-size: 11px; color: #94a3b8; font-weight: 300; }
+  input, select, textarea {
+    padding: 11px 14px; border: 1.5px solid #cbd5e1; border-radius: 8px;
+    font-family: 'Nunito', sans-serif; font-size: 14px; color: #1e293b;
+    background: #f8fafc; outline: none; transition: border-color 0.2s; width: 100%;
+    appearance: auto;
+  }
+  input:focus, select:focus, textarea:focus { border-color: #1b4fa8; background: #fff; }
+  .hint { font-size: 11px; color: #94a3b8; font-weight: 300; }
 
-.toggle-group {
-  display: flex; align-items: center; gap: 12px; padding: 13px 16px;
-  background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 8px; cursor: pointer;
-  transition: border-color 0.2s;
-}
-.toggle-group:hover { border-color: #1b4fa8; }
-.toggle-group input[type="checkbox"] { width: 18px; height: 18px; accent-color: #1b4fa8; cursor: pointer; flex-shrink: 0; }
-.toggle-label { font-size: 14px; color: #1e293b; flex: 1; line-height: 1.4; }
-.toggle-label small { display: block; font-size: 11px; color: #94a3b8; margin-top: 2px; }
+  .toggle-group {
+    display: flex; align-items: center; gap: 12px; padding: 13px 16px;
+    background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 8px; cursor: pointer;
+    transition: border-color 0.2s;
+  }
+  .toggle-group:hover { border-color: #1b4fa8; }
+  .toggle-group input[type="checkbox"] { width: 18px; height: 18px; accent-color: #1b4fa8; cursor: pointer; flex-shrink: 0; }
+  .toggle-label { font-size: 14px; color: #1e293b; flex: 1; line-height: 1.4; }
+  .toggle-label small { display: block; font-size: 11px; color: #94a3b8; margin-top: 2px; }
 
-/* ORDER SUMMARY */
-.summary-box {
-  background: #f0f7ff; border: 1.5px solid #bfdbfe; border-radius: 12px; padding: 22px 24px;
-}
-.summary-title { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 16px; color: #0a2463; margin-bottom: 14px; }
-.summary-line { display: flex; justify-content: space-between; font-size: 13px; color: #475569; padding: 5px 0; }
-.summary-line.total {
-  border-top: 1.5px solid #bfdbfe; margin-top: 10px; padding-top: 12px;
-  font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 20px; color: #0a2463;
-}
-.summary-line.total span { color: #1b4fa8; }
-.summary-pickup { font-size: 12px; color: #64748b; margin-top: 10px; padding-top: 10px; border-top: 1px dashed #bfdbfe; }
-.summary-pickup strong { color: #0a2463; font-family: 'Quicksand', sans-serif; }
+  /* ORDER SUMMARY */
+  .summary-box {
+    background: #f0f7ff; border: 1.5px solid #bfdbfe; border-radius: 12px; padding: 22px 24px;
+  }
+  .summary-title { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 16px; color: #0a2463; margin-bottom: 14px; }
+  .summary-line { display: flex; justify-content: space-between; font-size: 13px; color: #475569; padding: 5px 0; }
+  .summary-line.total {
+    border-top: 1.5px solid #bfdbfe; margin-top: 10px; padding-top: 12px;
+    font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 20px; color: #0a2463;
+  }
+  .summary-line.total span { color: #1b4fa8; }
+  .summary-pickup { font-size: 12px; color: #64748b; margin-top: 10px; padding-top: 10px; border-top: 1px dashed #bfdbfe; }
+  .summary-pickup strong { color: #0a2463; font-family: 'Quicksand', sans-serif; }
 
-/* TERMS */
-.terms-scroll {
-  background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 10px;
-  padding: 20px; max-height: 230px; overflow-y: auto; font-size: 12px;
-  color: #475569; line-height: 1.8; margin-bottom: 16px;
-}
-.terms-scroll h4 {
-  font-family: 'Quicksand', sans-serif; font-size: 13px; font-weight: 700;
-  color: #0a2463; margin: 16px 0 4px;
-}
-.terms-scroll h4:first-child { margin-top: 0; }
+  /* TERMS */
+  .terms-scroll {
+    background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 10px;
+    padding: 20px; max-height: 230px; overflow-y: auto; font-size: 12px;
+    color: #475569; line-height: 1.8; margin-bottom: 16px;
+  }
+  .terms-scroll h4 {
+    font-family: 'Quicksand', sans-serif; font-size: 13px; font-weight: 700;
+    color: #0a2463; margin: 16px 0 4px;
+  }
+  .terms-scroll h4:first-child { margin-top: 0; }
 
-.terms-agree { display: flex; align-items: flex-start; gap: 10px; }
-.terms-agree input { width: 18px; height: 18px; accent-color: #1b4fa8; margin-top: 2px; flex-shrink: 0; cursor: pointer; }
-.terms-agree-text { font-size: 13px; color: #475569; line-height: 1.5; }
+  .terms-agree { display: flex; align-items: flex-start; gap: 10px; }
+  .terms-agree input { width: 18px; height: 18px; accent-color: #1b4fa8; margin-top: 2px; flex-shrink: 0; cursor: pointer; }
+  .terms-agree-text { font-size: 13px; color: #475569; line-height: 1.5; }
 
-.submit-btn {
-  width: 100%; padding: 17px; background: linear-gradient(135deg, #0a2463, #1b4fa8);
-  color: #fff; border: none; border-radius: 10px; font-family: 'Quicksand', sans-serif;
-  font-size: 17px; font-weight: 700; cursor: pointer; letter-spacing: 0.5px;
-  transition: opacity 0.2s; margin-top: 18px;
-}
-.submit-btn:hover { opacity: 0.9; }
-.green-note { text-align: center; font-size: 12px; color: #16a34a; margin-top: 10px; }
+  .submit-btn {
+    width: 100%; padding: 17px; background: linear-gradient(135deg, #0a2463, #1b4fa8);
+    color: #fff; border: none; border-radius: 10px; font-family: 'Quicksand', sans-serif;
+    font-size: 17px; font-weight: 700; cursor: pointer; letter-spacing: 0.5px;
+    transition: opacity 0.2s; margin-top: 18px;
+  }
+  .submit-btn:hover { opacity: 0.9; }
+  .green-note { text-align: center; font-size: 12px; color: #16a34a; margin-top: 10px; }
 
-.success-msg {
-  display: none; background: #dcfce7; border: 1.5px solid #4caf50;
-  border-radius: 16px; padding: 40px; text-align: center;
-}
-.success-msg .check { font-size: 48px; margin-bottom: 14px; }
-.success-msg h3 { font-family: 'Quicksand', sans-serif; font-size: 26px; font-weight: 700; color: #166534; margin-bottom: 10px; }
-.success-msg p { font-size: 15px; color: #166534; font-weight: 300; line-height: 1.6; }
+  .success-msg {
+    display: none; background: #dcfce7; border: 1.5px solid #4caf50;
+    border-radius: 16px; padding: 40px; text-align: center;
+  }
+  .success-msg .check { font-size: 48px; margin-bottom: 14px; }
+  .success-msg h3 { font-family: 'Quicksand', sans-serif; font-size: 26px; font-weight: 700; color: #166534; margin-bottom: 10px; }
+  .success-msg p { font-size: 15px; color: #166534; font-weight: 300; line-height: 1.6; }
 
-@media (max-width: 600px) {
-  .form-grid { grid-template-columns: 1fr; }
-  .form-group.full { grid-column: 1; }
-  .days-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
-  .time-slots { grid-template-columns: 1fr 1fr; }
-  .hero h1 { font-size: 28px; }
-  .nav { flex-direction: column; gap: 10px; text-align: center; padding: 16px 20px; }
-  .card { padding: 22px 18px; }
-}
+
+  /* CUSTOMER TYPE TOGGLE */
+  .customer-toggle {
+    display: flex; gap: 0; margin-bottom: 0;
+    background: #f0f4f8; border-radius: 50px; padding: 4px;
+    max-width: 480px; margin: 0 auto;
+  }
+  .toggle-btn {
+    flex: 1; padding: 13px 20px; border: none; border-radius: 50px;
+    font-family: "Quicksand", sans-serif; font-size: 14px; font-weight: 600;
+    cursor: pointer; transition: all 0.25s; color: #64748b; background: transparent;
+    letter-spacing: 0.3px;
+  }
+  .toggle-btn.active { background: #0a2463; color: #fff; box-shadow: 0 4px 12px rgba(10,36,99,0.25); }
+  .toggle-btn.active.gym { background: linear-gradient(135deg, #4caf50, #2e7d32); }
+
+  /* SECTION VISIBILITY */
+  .household-section { display: flex; flex-direction: column; gap: 28px; }
+  .gym-section { display: none; flex-direction: column; gap: 28px; }
+
+  /* BEDDING */
+  .bedding-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 4px; }
+  .bedding-item {
+    display: flex; align-items: center; justify-content: space-between;
+    background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 10px;
+    padding: 12px 14px; cursor: pointer; transition: border-color 0.2s;
+  }
+  .bedding-item:hover { border-color: #1b4fa8; }
+  .bedding-item.selected { border-color: #1b4fa8; background: #eff6ff; }
+  .bedding-left { display: flex; align-items: center; gap: 10px; }
+  .bedding-emoji { font-size: 20px; }
+  .bedding-name { font-family: "Quicksand", sans-serif; font-size: 13px; font-weight: 600; color: #0a2463; }
+  .bedding-size { font-size: 11px; color: #94a3b8; margin-top: 1px; }
+  .bedding-price { font-family: "Quicksand", sans-serif; font-size: 14px; font-weight: 700; color: #1b4fa8; }
+  .bedding-qty { display: flex; align-items: center; gap: 8px; margin-top: 8px; }
+  .bedding-qty input { width: 60px; text-align: center; padding: 6px; font-size: 14px; }
+  .qty-btn { width: 28px; height: 28px; border: 1.5px solid #cbd5e1; border-radius: 50%; background: #fff; font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-family: "Quicksand", sans-serif; font-weight: 700; color: #0a2463; transition: all 0.2s; }
+  .qty-btn:hover { background: #0a2463; color: #fff; border-color: #0a2463; }
+
+  /* GYM FORM */
+  .gym-highlight {
+    background: linear-gradient(135deg, #1b5e20, #2e7d32);
+    border-radius: 14px; padding: 22px 26px; margin-bottom: 20px;
+    display: flex; align-items: center; gap: 16px;
+  }
+  .gym-highlight-icon { font-size: 36px; flex-shrink: 0; }
+  .gym-highlight-text h3 { font-family: "Quicksand", sans-serif; font-weight: 700; font-size: 18px; color: #fff; margin-bottom: 4px; }
+  .gym-highlight-text p { font-size: 13px; color: rgba(255,255,255,0.75); font-weight: 300; line-height: 1.5; }
+
+  .quote-btn {
+    width: 100%; padding: 17px; background: linear-gradient(135deg, #1b5e20, #4caf50);
+    color: #fff; border: none; border-radius: 10px; font-family: "Quicksand", sans-serif;
+    font-size: 17px; font-weight: 700; cursor: pointer; letter-spacing: 0.5px;
+    transition: opacity 0.2s; margin-top: 16px;
+  }
+  .quote-btn:hover { opacity: 0.9; }
+
+  .gym-success { display: none; background: #dcfce7; border: 1.5px solid #4caf50; border-radius: 16px; padding: 32px; text-align: center; }
+  .gym-success h3 { font-family: "Quicksand", sans-serif; font-size: 22px; font-weight: 700; color: #166534; margin-bottom: 8px; }
+  .gym-success p { font-size: 14px; color: #166534; font-weight: 300; line-height: 1.6; }
+
+  @media (max-width: 600px) {
+    .form-grid { grid-template-columns: 1fr; }
+    .form-group.full { grid-column: 1; }
+    .days-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .time-slots { grid-template-columns: 1fr 1fr; }
+    .hero h1 { font-size: 28px; }
+    .nav { flex-direction: column; gap: 6px; text-align: center; padding: 16px 20px; }
+    .card { padding: 22px 18px; }
+  }
 </style>
 </head>
 <body>
 
 <div class="nav">
-  <a href="index.html" class="nav-brand">Door<span>2</span>Door</a>
+  <div class="nav-brand">Door<span>2</span>Door</div>
   <div class="nav-tag">Laundry Co. — Fort Wayne &amp; New Haven, IN</div>
-  <a href="index.html" class="nav-back">← Back to Home</a>
 </div>
 
 <div class="hero">
@@ -224,7 +277,21 @@ input:focus, select:focus, textarea:focus { border-color: #1b4fa8; background: #
   </div>
 </div>
 
+<!-- CUSTOMER TYPE SELECTOR -->
+<div style="background:#ffffff;padding:24px 20px;border-bottom:2px solid #e2e8f0;">
+  <div style="max-width:860px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:14px;">
+      <div style="font-family:'Quicksand',sans-serif;font-size:13px;font-weight:700;letter-spacing:3px;color:#64748b;text-transform:uppercase;">I am booking as a...</div>
+    </div>
+    <div class="customer-toggle">
+      <button class="toggle-btn active" onclick="switchMode('household')">🏠 Household Customer</button>
+      <button class="toggle-btn gym" onclick="switchMode('gym')">🥋 Gym / Business</button>
+    </div>
+  </div>
+</div>
+
 <div class="main">
+<div class="household-section" id="householdSection">
 
   <!-- PRICING CARD -->
   <div class="card">
@@ -250,7 +317,7 @@ input:focus, select:focus, textarea:focus { border-color: #1b4fa8; background: #
           <div class="price-name">Fabric Softener Beads</div>
           <div class="price-desc">Added to your wash</div>
         </div>
-        <div class="upcharge">+ $2 per bag</div>
+        <div class="upcharge">+ $3 per bag</div>
       </div>
       <div class="price-row">
         <div>
@@ -277,6 +344,9 @@ input:focus, select:focus, textarea:focus { border-color: #1b4fa8; background: #
     <div class="bag-note">
       ⚠️ <span><strong>Please note:</strong> Use a standard 13-gallon trash bag. Do not use ripped or damaged bags. If your bag is overstuffed, the excess weight will be charged at <strong>$2.00 per pound</strong>. We will notify you of any extra charges before processing your order.</span>
     </div>
+
+    <!-- BEDDING PRICING -->
+
   </div>
 
   <!-- BOOKING FORM -->
@@ -285,47 +355,28 @@ input:focus, select:focus, textarea:focus { border-color: #1b4fa8; background: #
     <div class="card-sub">Pickups available Monday, Wednesday, and Friday mornings.</div>
 
     <!-- STEP 1: PICK A DAY -->
-    <div class="schedule-note">📅 &nbsp;We pick up on <strong>Monday, Wednesday, and Friday</strong> only — between <strong>7:00 AM and 11:00 AM.</strong></div>
+    <div class="schedule-note">📅 &nbsp;We pick up on <strong>Monday, Wednesday, and Friday</strong>. Please have your bag(s) in your designated pickup spot by <strong>7:00 AM</strong> on your chosen day. We will pick up during the day and notify you when collected.</div>
 
     <div class="time-label">Choose your pickup day:</div>
     <div class="days-grid">
       <div class="day-card" onclick="selectDay(this, 'Monday')">
         <div class="day-emoji">📦</div>
         <div class="day-name">Monday</div>
-        <div class="day-sub">7AM – 11AM</div>
+        <div class="day-sub">Bag out by 7AM</div>
       </div>
       <div class="day-card" onclick="selectDay(this, 'Wednesday')">
         <div class="day-emoji">📦</div>
         <div class="day-name">Wednesday</div>
-        <div class="day-sub">7AM – 11AM</div>
+        <div class="day-sub">Bag out by 7AM</div>
       </div>
       <div class="day-card" onclick="selectDay(this, 'Friday')">
         <div class="day-emoji">📦</div>
         <div class="day-name">Friday</div>
-        <div class="day-sub">7AM – 11AM</div>
+        <div class="day-sub">Bag out by 7AM</div>
       </div>
     </div>
 
-    <!-- STEP 2: PICK A TIME -->
-    <div class="time-label">Choose your preferred pickup window:</div>
-    <div class="time-slots" style="margin-bottom: 28px;">
-      <div class="time-slot" onclick="selectTime(this, '7:00 AM – 8:00 AM')">
-        <div class="slot-time">7:00 AM – 8:00 AM</div>
-        <div class="slot-desc">Early morning</div>
-      </div>
-      <div class="time-slot" onclick="selectTime(this, '8:00 AM – 9:00 AM')">
-        <div class="slot-time">8:00 AM – 9:00 AM</div>
-        <div class="slot-desc">Morning</div>
-      </div>
-      <div class="time-slot" onclick="selectTime(this, '9:00 AM – 10:00 AM')">
-        <div class="slot-time">9:00 AM – 10:00 AM</div>
-        <div class="slot-desc">Mid morning</div>
-      </div>
-      <div class="time-slot" onclick="selectTime(this, '10:00 AM – 11:00 AM')">
-        <div class="slot-time">10:00 AM – 11:00 AM</div>
-        <div class="slot-desc">Late morning</div>
-      </div>
-    </div>
+
 
     <!-- CONTACT INFO -->
     <div class="card-title" style="font-size:17px; margin-bottom:6px;">👤 Your Information</div>
@@ -354,11 +405,16 @@ input:focus, select:focus, textarea:focus { border-color: #1b4fa8; background: #
       <div class="form-group">
         <label>Number of Bags <span class="req">*</span></label>
         <select id="numBags" onchange="updateSummary()">
-          <option value="1">1 bag</option>
-          <option value="2">2 bags</option>
-          <option value="3">3 bags</option>
-          <option value="4">4 bags</option>
-          <option value="5">5 bags</option>
+          <option value="1">1 bag — $35</option>
+          <option value="2">2 bags — $65</option>
+          <option value="3">3 bags — $95</option>
+          <option value="4">4 bags — $125</option>
+          <option value="5">5 bags — $155</option>
+          <option value="6">6 bags — $180</option>
+          <option value="7">7 bags — $205</option>
+          <option value="8">8 bags — $230</option>
+          <option value="9">9 bags — $255</option>
+          <option value="10">10 bags — $280</option>
         </select>
       </div>
     </div>
@@ -390,7 +446,7 @@ input:focus, select:focus, textarea:focus { border-color: #1b4fa8; background: #
       <div class="form-group full">
         <label>
           Fabric Softener Beads
-          <span class="badge-tag badge-up">+ $2 per bag</span>
+          <span class="badge-tag badge-up">+ $3 per bag</span>
         </label>
         <label class="toggle-group">
           <input type="checkbox" id="beads" onchange="updateSummary()"/>
@@ -446,125 +502,8 @@ input:focus, select:focus, textarea:focus { border-color: #1b4fa8; background: #
         </label>
       </div>
 
-      <div class="form-group full">
-        <label>Special Instructions</label>
-        <textarea id="notes" rows="3" placeholder="Gate codes, preferred drop-off location, or anything else we should know..."></textarea>
-      </div>
-
-    </div>
-
-    <!-- ORDER SUMMARY -->
-    <div class="summary-box" id="summaryBox">
-      <div class="summary-title">🧾 Order Summary</div>
-      <div class="summary-line"><span>First bag</span><span>$35.00</span></div>
-      <div class="summary-line" id="extraBagsLine" style="display:none;"><span id="extraBagsLabel">Additional bags</span><span id="extraBagsVal"></span></div>
-      <div class="summary-line" id="beadsLine" style="display:none;"><span id="beadsLabel">Fabric softener beads</span><span id="beadsVal"></span></div>
-      <div class="summary-line" id="babyLine" style="display:none;"><span>Baby clothes (Dreft)</span><span>$3.00</span></div>
-      <div class="summary-line" id="stainsLine" style="display:none;"><span>Stain pretreatment</span><span style="color:#4caf50;">FREE</span></div>
-      <div class="summary-line"><span>Pickup &amp; delivery</span><span style="color:#4caf50;">FREE</span></div>
-      <div class="summary-line total"><span>Total</span><span id="totalVal">$35.00</span></div>
-      <div class="summary-pickup" id="pickupSummary">
-        <strong>Pickup:</strong> <span id="pickupText">No day/time selected yet</span>
-      </div>
-    </div>
-
-    <button class="submit-btn" onclick="submitForm()">📦 Submit My Pickup Request</button>
-    <div class="green-note">✅ Free pickup &amp; delivery — always. We'll confirm your booking by text or email.</div>
-  </div>
-
-  <!-- PAYMENT METHODS -->
-  <div class="card">
-    <div class="card-title">💳 How to Pay</div>
-    <div class="card-sub">Payment is due at booking for first-time customers, and at delivery for returning customers. Pay securely right here on our site or use any method below.</div>
-
-    <!-- SQUARE PAY BUTTON -->
-    <div style="background:linear-gradient(135deg,#0a2463,#1b4fa8);border-radius:14px;padding:24px 28px;margin-bottom:20px;text-align:center;position:relative;overflow:hidden;">
-      <div style="position:absolute;top:-30px;right:-30px;width:100px;height:100px;border-radius:50%;background:rgba(255,255,255,0.06);"></div>
-      <div style="font-family:'Quicksand',sans-serif;font-size:13px;font-weight:600;letter-spacing:3px;color:rgba(255,255,255,0.65);text-transform:uppercase;margin-bottom:10px;">Pay Securely Online</div>
-      <div style="font-family:'Quicksand',sans-serif;font-size:20px;font-weight:700;color:#ffffff;margin-bottom:6px;">Pay Your Balance Now</div>
-      <div style="font-size:13px;color:rgba(255,255,255,0.65);font-weight:300;margin-bottom:20px;">Powered by Square — safe, secure, and takes 10 seconds</div>
-
-      <!-- Square Pay Button Placeholder -->
-      <div style="background:#ffffff;border-radius:10px;padding:16px 24px;display:inline-block;margin-bottom:16px;min-width:280px;">
-        <div style="font-family:'Quicksand',sans-serif;font-size:13px;color:#64748b;margin-bottom:10px;font-weight:300;">[ Your son will activate this Square Pay button once your Square account is set up ]</div>
-        <div style="background:#0a2463;color:#fff;font-family:'Quicksand',sans-serif;font-weight:700;font-size:15px;padding:12px 32px;border-radius:8px;display:inline-block;cursor:pointer;letter-spacing:0.5px;">
-          💳 Pay with Square
-        </div>
-      </div>
-
-      <!-- Accepted payment badges -->
-      <div style="display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;">
-        <div style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:11px;font-weight:600;padding:5px 12px;border-radius:20px;font-family:'Quicksand',sans-serif;letter-spacing:0.5px;"> Apple Pay</div>
-        <div style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:11px;font-weight:600;padding:5px 12px;border-radius:20px;font-family:'Quicksand',sans-serif;letter-spacing:0.5px;"> Google Pay</div>
-        <div style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:11px;font-weight:600;padding:5px 12px;border-radius:20px;font-family:'Quicksand',sans-serif;letter-spacing:0.5px;">💳 Visa / Mastercard</div>
-        <div style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:11px;font-weight:600;padding:5px 12px;border-radius:20px;font-family:'Quicksand',sans-serif;letter-spacing:0.5px;">💳 Amex / Discover</div>
-      </div>
-    </div>
-
-    <!-- OR divider -->
-    <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;">
-      <div style="flex:1;height:1px;background:#e2e8f0;"></div>
-      <div style="font-family:'Quicksand',sans-serif;font-size:12px;font-weight:600;color:#94a3b8;letter-spacing:2px;">OR PAY DIRECTLY</div>
-      <div style="flex:1;height:1px;background:#e2e8f0;"></div>
-    </div>
-
-    <!-- Other payment methods -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px;">
-
-      <div style="background:#f0f7ff;border:1.5px solid #bfdbfe;border-radius:12px;padding:16px;display:flex;align-items:center;gap:12px;">
-        <div style="font-size:28px;flex-shrink:0;">💸</div>
-        <div>
-          <div style="font-family:'Quicksand',sans-serif;font-weight:700;font-size:14px;color:#0a2463;margin-bottom:2px;">Venmo</div>
-          <div style="font-size:11px;color:#475569;font-weight:300;margin-bottom:4px;">Fast &amp; free</div>
-          <div style="font-family:'Quicksand',sans-serif;font-size:12px;font-weight:600;color:#1b4fa8;">@Door2DoorLaundry</div>
-        </div>
-      </div>
-
-      <div style="background:#f0fff4;border:1.5px solid #a7f3d0;border-radius:12px;padding:16px;display:flex;align-items:center;gap:12px;">
-        <div style="font-size:28px;flex-shrink:0;">💵</div>
-        <div>
-          <div style="font-family:'Quicksand',sans-serif;font-weight:700;font-size:14px;color:#0a2463;margin-bottom:2px;">Cash App</div>
-          <div style="font-size:11px;color:#475569;font-weight:300;margin-bottom:4px;">Quick &amp; simple</div>
-          <div style="font-family:'Quicksand',sans-serif;font-size:12px;font-weight:600;color:#16a34a;">$Door2DoorLaundry</div>
-        </div>
-      </div>
-
-      <div style="background:#fefce8;border:1.5px solid #fde047;border-radius:12px;padding:16px;display:flex;align-items:center;gap:12px;">
-        <div style="font-size:28px;flex-shrink:0;">🏦</div>
-        <div>
-          <div style="font-family:'Quicksand',sans-serif;font-weight:700;font-size:14px;color:#0a2463;margin-bottom:2px;">Zelle</div>
-          <div style="font-size:11px;color:#475569;font-weight:300;margin-bottom:4px;">Built into your bank app</div>
-          <div style="font-family:'Quicksand',sans-serif;font-size:12px;font-weight:600;color:#92400e;">269-267-6508</div>
-        </div>
-      </div>
-
-      <div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;padding:16px;display:flex;align-items:center;gap:12px;">
-        <div style="font-size:28px;flex-shrink:0;">💰</div>
-        <div>
-          <div style="font-family:'Quicksand',sans-serif;font-weight:700;font-size:14px;color:#0a2463;margin-bottom:2px;">Cash</div>
-          <div style="font-size:11px;color:#475569;font-weight:300;margin-bottom:4px;">Always welcome</div>
-          <div style="font-family:'Quicksand',sans-serif;font-size:12px;font-weight:600;color:#475569;">Exact change appreciated</div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Payment policy note -->
-    <div style="background:#fff8e1;border:1.5px solid #fde047;border-radius:12px;padding:16px 20px;display:flex;gap:12px;align-items:flex-start;">
-      <div style="font-size:22px;flex-shrink:0;">📋</div>
-      <div>
-        <div style="font-family:'Quicksand',sans-serif;font-weight:700;font-size:14px;color:#92400e;margin-bottom:4px;">Payment Policy</div>
-        <div style="font-size:12px;color:#92400e;font-weight:300;line-height:1.6;">
-          <strong>First-time customers</strong> — payment is required before pickup to confirm your booking.<br/>
-          <strong>Returning customers</strong> — payment is due at the time of delivery.<br/>
-          Late payments are subject to a <strong>$5 late fee</strong> after 24 hours. Non-payment may result in suspension of service.
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- TERMS & CONDITIONS -->
-  <div class="card">
+<!-- TERMS & CONDITIONS -->
+  <div class="card" id="termsCard">
     <div class="card-title">📋 Terms &amp; Conditions</div>
     <div class="card-sub">Please read before booking.</div>
     <div class="terms-scroll">
@@ -577,7 +516,7 @@ input:focus, select:focus, textarea:focus { border-color: #1b4fa8; background: #
       <h4>3. Special Items</h4>
       Baby clothes must be placed in a separate smaller bag inside the 13-gallon bag and clearly identified. Stained items must be placed in a separate smaller bag inside the 13-gallon bag. Failure to separate items as instructed may result in items being washed together without pretreatment or Dreft.
 
-      <h4>4. Pockets &amp; Personal Items</h4>
+      <h4>4. Pockets & Personal Items</h4>
       Door2Door Laundry Co. is not responsible for any items left in pockets, including but not limited to cash, cards, jewelry, electronics, or personal belongings. Please check all pockets before placing items in your bag.
 
       <h4>5. Pre-Existing Damage</h4>
@@ -587,13 +526,15 @@ input:focus, select:focus, textarea:focus { border-color: #1b4fa8; background: #
       Standard turnaround is 24–48 hours. We will notify you when your laundry is ready for delivery. Delays due to weather, high volume, or other unforeseen circumstances will be communicated as soon as possible.
 
       <h4>7. Payment</h4>
-      <strong>First-time customers</strong> are required to pay in full before pickup to confirm their booking. <strong>Returning customers in good standing</strong> may pay at the time of delivery. Accepted payment methods include Square (Apple Pay, Google Pay, all major credit/debit cards), Venmo (@Door2DoorLaundry), Cash App ($Door2DoorLaundry), Zelle (269-267-6508), and cash.
+      <strong>First-time customers</strong> are required to pay in full before pickup to confirm their booking. <strong>Returning customers in good standing</strong> may pay at the time of delivery. Accepted payment methods include Square (Apple Pay, Google Pay, all major credit/debit cards), Venmo (@Door2DoorLaundry), Cash App ($Door2DoorLaundry), Zelle ((260) 267-6508), and cash.
+      <h4>8. Payment Policy</h4>
+      Payment is due at the time of service. First-time customers are required to pay before pickup to confirm their booking. Returning customers pay at the time of delivery. Late payments may be subject to a late fee. Non-payment may result in suspension of service.
 
-      <h4>8. Late Payment &amp; Non-Payment</h4>
-      Payment not received within 24 hours of delivery will incur a <strong>$5.00 late fee</strong>. Payment not received within 48 hours may result in immediate suspension of service until the full balance including late fees is paid. Repeated non-payment will result in permanent termination of service. Door2Door Laundry Co. reserves the right to pursue unpaid balances through small claims court. All deliveries are documented with a timestamped photo as proof of delivery.
-
-      <h4>9. Cancellations</h4>
-      Please cancel or reschedule at least 12 hours before your scheduled pickup by texting or calling 269-267-6508. Late cancellations or no-shows may result in a cancellation fee.
+      <h4>9. Cancellations &amp; No-Shows</h4>
+      Cancellations or rescheduling must be made at least <strong>24 hours before</strong> your scheduled pickup by calling or texting <strong>(260) 267-6508</strong>. Email cancellations are not accepted.<br/><br/>
+      <strong>Late Cancellations</strong> (less than 24 hours notice) will be charged a <strong>$10 cancellation fee</strong>.<br/><br/>
+      <strong>No-Shows</strong> — if we arrive and no bag is available and no contact has been made, the full <strong>$35 service fee</strong> will be charged.<br/><br/>
+      <strong>Rescheduling</strong> is always free with at least 24 hours notice. First-time customers receive one courtesy late cancellation waiver.
 
       <h4>10. Lost Items</h4>
       Door2Door Laundry Co. takes great care with every load. In the rare event an item cannot be located, we will make every reasonable effort to find it. We are not liable for items that cannot be accounted for due to improper bagging or unlabeled bags with multiple customers.
@@ -628,108 +569,509 @@ input:focus, select:focus, textarea:focus { border-color: #1b4fa8; background: #
   <div class="success-msg" id="successMsg">
     <div class="check">🎉</div>
     <h3>Pickup Request Submitted!</h3>
-    <p>Thank you! We'll confirm your pickup by text or email within a few hours.<br/>Questions? Call or text us at <strong>269-267-6508</strong>.</p>
+    <p>Thank you! We'll confirm your pickup by text or email within a few hours.<br/>Questions? Call or text us at <strong>(260) 267-6508</strong>.</p>
   </div>
+
+</div><!-- end household-section -->
+
+<!-- GYM / BUSINESS SECTION -->
+<div class="gym-section" id="gymSection">
+  <div style="max-width:860px;margin:0 auto;padding:40px 20px 60px;display:flex;flex-direction:column;gap:28px;">
+
+    <!-- GYM HIGHLIGHT -->
+    <div class="card">
+      <div class="gym-highlight">
+        <div class="gym-highlight-icon">🥋</div>
+        <div class="gym-highlight-text">
+          <h3>Commercial Laundry Service for Gyms &amp; Dojos</h3>
+          <p>We offer weekly recurring pickup and delivery tailored to your facility. Fill out the form below and we'll contact you within 24 hours to build a custom plan that works for your schedule and volume.</p>
+        </div>
+      </div>
+
+      <!-- GYM PRICING OVERVIEW -->
+      <div class="card-title" style="font-size:17px;margin-bottom:6px;">💰 Commercial Pricing</div>
+      <div class="card-sub">Flat rate bags or weekly recurring contracts — we'll find what works best for you.</div>
+      <div class="pricing-table" style="margin-bottom:0;">
+        <div class="price-row featured">
+          <div><div class="price-name">Single Bag — 13 Gallon</div><div class="price-desc">One-time or occasional pickup</div></div>
+          <div class="price-val">$35</div>
+        </div>
+        <div class="price-row">
+          <div><div class="price-name">Each Additional Bag</div><div class="price-desc">Same visit</div></div>
+          <div class="price-val">$30</div>
+        </div>
+        <div class="price-row">
+          <div><div class="price-name">Weekly Recurring — 3 Bags</div><div class="price-desc">Best for dojos &amp; small studios</div></div>
+          <div style="font-size:14px;color:#4caf50;font-weight:700;">$95 / week</div>
+        </div>
+        <div class="price-row">
+          <div><div class="price-name">Custom Volume Contract</div><div class="price-desc">High volume gyms &amp; facilities — let's talk!</div></div>
+          <div style="font-size:14px;color:#f59e0b;font-weight:700;">Request Quote</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GYM QUOTE FORM -->
+    <div class="card" id="gymForm">
+      <div class="card-title">📋 Request a Quote</div>
+      <div class="card-sub">Tell us about your facility and we'll put together a custom plan for you.</div>
+
+      <div class="form-grid" style="margin-bottom:20px;">
+        <div class="form-group">
+          <label>Contact Name <span class="req">*</span></label>
+          <input type="text" id="gymName" placeholder="John Smith"/>
+        </div>
+        <div class="form-group">
+          <label>Business Name <span class="req">*</span></label>
+          <input type="text" id="gymBusiness" placeholder="Fort Wayne Jiu Jitsu"/>
+        </div>
+        <div class="form-group">
+          <label>Phone Number <span class="req">*</span></label>
+          <input type="tel" id="gymPhone" placeholder="(260) 555-0000"/>
+        </div>
+        <div class="form-group">
+          <label>Email Address <span class="req">*</span></label>
+          <input type="email" id="gymEmail" placeholder="john@fwbjj.com"/>
+        </div>
+        <div class="form-group full">
+          <label>Facility Address <span class="req">*</span></label>
+          <input type="text" id="gymAddress" placeholder="123 Main St, Fort Wayne, IN 46801"/>
+        </div>
+        <div class="form-group">
+          <label>Type of Facility <span class="req">*</span></label>
+          <select id="gymType">
+            <option value="">— Select —</option>
+            <option>Jiu Jitsu / BJJ Gym</option>
+            <option>Karate / Martial Arts Dojo</option>
+            <option>MMA / Boxing Gym</option>
+            <option>Fitness / CrossFit Gym</option>
+            <option>Yoga / Pilates Studio</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Estimated Weekly Bags</label>
+          <select id="gymVolume">
+            <option value="">— Approximate amount —</option>
+            <option>1–3 bags per week</option>
+            <option>4–6 bags per week</option>
+            <option>7–10 bags per week</option>
+            <option>10+ bags per week</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label>What do you need washed? <span class="req">*</span></label>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px;">
+            <label class="toggle-group"><input type="checkbox" name="gymItems" value="Gi's &amp; Uniforms"/><span class="toggle-label">🥋 Gi's &amp; Uniforms</span></label>
+            <label class="toggle-group"><input type="checkbox" name="gymItems" value="Rashguards"/><span class="toggle-label">🩱 Rashguards &amp; Shorts</span></label>
+            <label class="toggle-group"><input type="checkbox" name="gymItems" value="Towels"/><span class="toggle-label">🛁 Towels &amp; Wraps</span></label>
+            <label class="toggle-group"><input type="checkbox" name="gymItems" value="Workout Clothes"/><span class="toggle-label">🏋️ Workout Clothes</span></label>
+            <label class="toggle-group"><input type="checkbox" name="gymItems" value="Staff Uniforms"/><span class="toggle-label">👕 Staff Uniforms</span></label>
+            <label class="toggle-group"><input type="checkbox" name="gymItems" value="Other"/><span class="toggle-label">📦 Other</span></label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Preferred Pickup Day</label>
+          <select id="gymDay">
+            <option value="">— Select —</option>
+            <option>Monday</option>
+            <option>Wednesday</option>
+            <option>Friday</option>
+            <option>Flexible</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Service Frequency</label>
+          <select id="gymFreq">
+            <option value="">— Select —</option>
+            <option>Weekly</option>
+            <option>Bi-weekly</option>
+            <option>As needed</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label>Additional Notes</label>
+          <textarea id="gymNotes" rows="3" placeholder="Anything else we should know about your facility or laundry needs..."></textarea>
+        </div>
+      </div>
+
+      <button class="quote-btn" onclick="submitGymForm()">🥋 Submit Quote Request</button>
+      <div class="green-note">We'll contact you within 24 hours to discuss your custom plan.</div>
+    </div>
+
+    <div class="gym-success" id="gymSuccess">
+      <div style="font-size:48px;margin-bottom:14px;">🎉</div>
+      <h3>Quote Request Received!</h3>
+      <p>Thank you! We'll be in touch within 24 hours to put together a custom plan for your facility.<br/>Questions? Call or text us at <strong>(260) 267-6508</strong>.</p>
+    </div>
+
+  </div>
+</div><!-- end gym-section -->
 
 </div>
 
+<!-- Pay Now Button + Dropdown -->
+    <div id="payNowSection" style="margin-top:10px;">
+
+      <!-- ORDER TOTAL DISPLAY -->
+      <div style="background:linear-gradient(135deg,#0d2145,#1c3f72);border-radius:14px;padding:18px 24px;margin-bottom:14px;display:flex;justify-content:space-between;align-items:center;">
+        <div>
+          <div style="font-family:'Quicksand',sans-serif;font-size:11px;font-weight:600;letter-spacing:2px;color:rgba(255,255,255,0.55);text-transform:uppercase;margin-bottom:4px;">Your Order Total</div>
+          <div style="font-family:'Quicksand',sans-serif;font-size:13px;color:rgba(255,255,255,0.7);">Please send this amount when paying</div>
+        </div>
+        <div style="font-family:'Quicksand',sans-serif;font-weight:900;font-size:36px;color:#6ecef5;" id="payNowTotal">$35.00</div>
+      </div>
+
+      <!-- T&C CHECKBOX -->
+      <div style="background:#f8fafc;border:1.5px solid #d6e4f0;border-radius:12px;padding:16px 20px;margin-bottom:14px;display:flex;align-items:flex-start;gap:12px;">
+        <input type="checkbox" id="tcAgree" onchange="togglePayBtn()" style="width:20px;height:20px;accent-color:#0d2145;flex-shrink:0;margin-top:2px;cursor:pointer;"/>
+        <label for="tcAgree" style="font-family:'Lato',sans-serif;font-size:13px;color:#475569;line-height:1.6;cursor:pointer;">
+          I have read and agree to the <a href="#terms" onclick="document.getElementById('termsCard').scrollIntoView({behavior:'smooth'});return false;" style="color:#1c3f72;font-weight:700;text-decoration:underline;">Terms and Conditions</a> of Door2Door Laundry Solutions, including the cancellation policy, payment policy, and bag requirements.
+        </label>
+      </div>
+
+      <!-- PAY NOW BUTTON -->
+      <button id="payNowBtn" onclick="togglePayOptions()" disabled style="width:100%;padding:16px;background:#94a3b8;color:white;border:none;border-radius:12px;font-family:'Quicksand',sans-serif;font-size:18px;font-weight:700;cursor:not-allowed;letter-spacing:0.5px;transition:all 0.3s;display:flex;align-items:center;justify-content:center;gap:10px;opacity:0.7;">
+        <span>&#128179;</span> Pay Now <span id="payArrow" style="font-size:14px;transition:transform 0.3s;">&#9660;</span>
+      </button>
+      <div id="tcWarning" style="text-align:center;font-size:12px;color:#94a3b8;margin-top:6px;">Please agree to the Terms and Conditions above to continue.</div>
+
+      <!-- DROPDOWN OPTIONS -->
+      <div id="payOptions" style="display:none;margin-top:12px;background:white;border:1.5px solid #d6e4f0;border-radius:14px;overflow:hidden;box-shadow:0 8px 30px rgba(28,63,114,0.12);">
+
+        <div style="padding:16px 20px;border-bottom:1px solid #f0f4f8;font-family:'Quicksand',sans-serif;font-weight:700;font-size:13px;color:#6b7a90;letter-spacing:1px;text-transform:uppercase;">Select a payment method</div>
+
+        <!-- PayPal -->
+        <label style="display:flex;align-items:center;gap:14px;padding:16px 20px;cursor:pointer;border-bottom:1px solid #f0f4f8;transition:background 0.2s;" onmouseover="this.style.background='#f8faff'" onmouseout="this.style.background='white'">
+          <input type="radio" name="payMethod" value="paypal" style="width:18px;height:18px;accent-color:#0d2145;flex-shrink:0;"/>
+          <span style="font-size:26px;">&#x1F4B3;</span>
+          <div style="flex:1;">
+            <div style="font-family:'Quicksand',sans-serif;font-weight:700;font-size:15px;color:#0d2145;">PayPal</div>
+            <div style="font-size:12px;color:#6b7a90;">Pay by card or PayPal balance — secure checkout</div>
+          </div>
+        </label>
+
+        <!-- Venmo -->
+        <label style="display:flex;align-items:center;gap:14px;padding:16px 20px;cursor:pointer;border-bottom:1px solid #f0f4f8;transition:background 0.2s;" onmouseover="this.style.background='#f0f7ff'" onmouseout="this.style.background='white'">
+          <input type="radio" name="payMethod" value="venmo" style="width:18px;height:18px;accent-color:#0d2145;flex-shrink:0;"/>
+          <span style="font-size:26px;">&#128184;</span>
+          <div style="flex:1;">
+            <div style="font-family:'Quicksand',sans-serif;font-weight:700;font-size:15px;color:#0d2145;">Venmo</div>
+            <div style="font-size:12px;color:#6b7a90;">@Door2DoorLaundry — fast &amp; free</div>
+          </div>
+        </label>
+
+        <!-- Cash App -->
+        <label style="display:flex;align-items:center;gap:14px;padding:16px 20px;cursor:pointer;border-bottom:1px solid #f0f4f8;transition:background 0.2s;" onmouseover="this.style.background='#f0fff4'" onmouseout="this.style.background='white'">
+          <input type="radio" name="payMethod" value="cashapp" style="width:18px;height:18px;accent-color:#0d2145;flex-shrink:0;"/>
+          <span style="font-size:26px;">&#128181;</span>
+          <div style="flex:1;">
+            <div style="font-family:'Quicksand',sans-serif;font-weight:700;font-size:15px;color:#0d2145;">Cash App</div>
+            <div style="font-size:12px;color:#6b7a90;">$Door2DoorLaundry — quick &amp; simple</div>
+          </div>
+        </label>
+
+        <!-- Zelle -->
+        <label style="display:flex;align-items:center;gap:14px;padding:16px 20px;cursor:pointer;border-bottom:1px solid #f0f4f8;transition:background 0.2s;" onmouseover="this.style.background='#fefce8'" onmouseout="this.style.background='white'">
+          <input type="radio" name="payMethod" value="zelle" style="width:18px;height:18px;accent-color:#0d2145;flex-shrink:0;"/>
+          <span style="font-size:26px;">&#127974;</span>
+          <div style="flex:1;">
+            <div style="font-family:'Quicksand',sans-serif;font-weight:700;font-size:15px;color:#0d2145;">Zelle</div>
+            <div style="font-size:12px;color:#6b7a90;">(260) 267-6508 — built into your bank app</div>
+          </div>
+        </label>
+
+        <!-- Continue Button -->
+        <div style="padding:16px 20px;background:#f8fafc;border-top:1.5px solid #e2e8f0;">
+          <button onclick="continuePayment()" style="width:100%;padding:14px;background:linear-gradient(135deg,#16a34a,#15803d);color:white;border:none;border-radius:10px;font-family:'Quicksand',sans-serif;font-size:16px;font-weight:700;cursor:pointer;transition:opacity 0.2s;" onmouseover="this.style.opacity=0.9" onmouseout="this.style.opacity=1">
+            Continue &#8594;
+          </button>
+        </div>
+
+      </div>
+
+      <!-- PAYMENT RESULT PANELS -->
+
+      <!-- PayPal Panel -->
+      <div id="panel-paypal" style="display:none;margin-top:14px;background:#f0f7ff;border:1.5px solid #bfdbfe;border-radius:14px;padding:24px;text-align:center;">
+        <div style="font-size:40px;margin-bottom:10px;">&#x1F4B3;</div>
+        <div style="font-family:'Quicksand',sans-serif;font-weight:800;font-size:18px;color:#0d2145;margin-bottom:6px;">Pay with PayPal</div>
+        <div style="font-size:13px;color:#475569;margin-bottom:18px;">You will be directed to PayPal to complete your payment securely by card or PayPal balance.</div>
+        <button onclick="window.open('https://www.paypal.com/paypalme/Door2DoorLaundry','_blank')" style="display:inline-block;padding:13px 36px;background:#0070ba;color:white;border-radius:50px;font-family:'Quicksand',sans-serif;font-weight:700;font-size:15px;border:none;cursor:pointer;">Open PayPal &#8594;</button>
+        <div style="margin-top:14px;"><button onclick="resetPayment()" style="background:none;border:none;color:#6b7a90;font-size:13px;cursor:pointer;text-decoration:underline;">&#8592; Choose a different method</button></div>
+      </div>
+
+      <!-- Venmo Panel -->
+      <div id="panel-venmo" style="display:none;margin-top:14px;background:#f0f7ff;border:1.5px solid #bfdbfe;border-radius:14px;padding:24px;text-align:center;">
+        <div style="font-size:40px;margin-bottom:10px;">&#128184;</div>
+        <div style="font-family:'Quicksand',sans-serif;font-weight:800;font-size:18px;color:#0d2145;margin-bottom:6px;">Pay with Venmo</div>
+        <div style="font-size:13px;color:#475569;margin-bottom:6px;">Open your Venmo app and send payment to:</div>
+        <div style="font-family:'Quicksand',sans-serif;font-weight:800;font-size:28px;color:#1b4fa8;margin-bottom:10px;">@Door2DoorLaundry</div>
+        <div style="background:#dbeafe;border-radius:10px;padding:12px 18px;margin-bottom:14px;font-size:12px;color:#1e40af;line-height:1.6;">
+          &#128247; Open Venmo &#8594; Search <strong>@Door2DoorLaundry</strong> &#8594; Enter your total &#8594; Send
+        </div>
+        <a href="https://venmo.com/Door2DoorLaundry" target="_blank" rel="noopener" style="display:inline-block;padding:13px 36px;background:#008cff;color:white;border-radius:50px;font-family:'Quicksand',sans-serif;font-weight:700;font-size:15px;text-decoration:none;margin-bottom:14px;">Open Venmo &#8594;</a>
+        <div style="margin-top:6px;"><button onclick="resetPayment()" style="background:none;border:none;color:#6b7a90;font-size:13px;cursor:pointer;text-decoration:underline;">&#8592; Choose a different method</button></div>
+      </div>
+
+      <!-- Cash App Panel -->
+      <div id="panel-cashapp" style="display:none;margin-top:14px;background:#f0fff4;border:1.5px solid #a7f3d0;border-radius:14px;padding:24px;text-align:center;">
+        <div style="font-size:40px;margin-bottom:10px;">&#128181;</div>
+        <div style="font-family:'Quicksand',sans-serif;font-weight:800;font-size:18px;color:#0d2145;margin-bottom:6px;">Pay with Cash App</div>
+        <div style="font-size:13px;color:#475569;margin-bottom:6px;">Open your Cash App and send payment to:</div>
+        <div style="font-family:'Quicksand',sans-serif;font-weight:800;font-size:28px;color:#16a34a;margin-bottom:10px;">$Door2DoorLaundry</div>
+        <div style="background:#dcfce7;border-radius:10px;padding:12px 18px;margin-bottom:14px;font-size:12px;color:#166534;line-height:1.6;">
+          &#128247; Open Cash App &#8594; Tap the <strong>$</strong> icon &#8594; Search <strong>$Door2DoorLaundry</strong> &#8594; Enter your total &#8594; Pay
+        </div>
+        <a href="https://cash.app/$Door2DoorLaundry" target="_blank" rel="noopener" style="display:inline-block;padding:13px 36px;background:#00d64f;color:white;border-radius:50px;font-family:'Quicksand',sans-serif;font-weight:700;font-size:15px;text-decoration:none;margin-bottom:14px;">Open Cash App &#8594;</a>
+        <div style="margin-top:6px;"><button onclick="resetPayment()" style="background:none;border:none;color:#6b7a90;font-size:13px;cursor:pointer;text-decoration:underline;">&#8592; Choose a different method</button></div>
+      </div>
+
+      <!-- Zelle Panel -->
+      <div id="panel-zelle" style="display:none;margin-top:14px;background:#fefce8;border:1.5px solid #fde047;border-radius:14px;padding:24px;text-align:center;">
+        <div style="font-size:40px;margin-bottom:10px;">&#127974;</div>
+        <div style="font-family:'Quicksand',sans-serif;font-weight:800;font-size:18px;color:#0d2145;margin-bottom:6px;">Pay with Zelle</div>
+        <div style="font-size:13px;color:#475569;margin-bottom:6px;">Open your bank app and send to:</div>
+        <div style="font-family:'Quicksand',sans-serif;font-weight:800;font-size:24px;color:#92400e;margin-bottom:8px;">(260) 267-6508</div>
+        <div style="font-size:12px;color:#6b7a90;margin-bottom:18px;">Search for Zelle in your bank app — most major banks support it</div>
+        <div style="margin-top:6px;"><button onclick="resetPayment()" style="background:none;border:none;color:#6b7a90;font-size:13px;cursor:pointer;text-decoration:underline;">&#8592; Choose a different method</button></div>
+      </div>
+
+    </div>
+
+  </div>
+
 <script>
-let selectedDay = '';
-let selectedTime = '';
+  let selectedDay = '';
+  let selectedTime = '';
 
-function selectDay(el, day) {
-  document.querySelectorAll('.day-card').forEach(d => d.classList.remove('selected'));
-  el.classList.add('selected');
-  selectedDay = day;
-  updatePickupSummary();
-}
-
-function selectTime(el, time) {
-  document.querySelectorAll('.time-slot').forEach(t => t.classList.remove('selected'));
-  el.classList.add('selected');
-  selectedTime = time;
-  updatePickupSummary();
-}
-
-function updatePickupSummary() {
-  const el = document.getElementById('pickupText');
-  if (selectedDay && selectedTime) {
-    el.textContent = selectedDay + ' · ' + selectedTime;
-  } else if (selectedDay) {
-    el.textContent = selectedDay + ' · No time selected';
-  } else {
-    el.textContent = 'No day/time selected yet';
-  }
-}
-
-function updateSummary() {
-  const numBags = parseInt(document.getElementById('numBags').value) || 1;
-  const beads = document.getElementById('beads').checked;
-  const baby = document.getElementById('babyClothes').checked;
-  const stains = document.getElementById('stains').checked;
-
-  let total = 35;
-
-  // Extra bags
-  const extraLine = document.getElementById('extraBagsLine');
-  if (numBags > 1) {
-    const extraCost = (numBags - 1) * 30;
-    total += extraCost;
-    document.getElementById('extraBagsLabel').textContent = (numBags - 1) + ' additional bag' + (numBags > 2 ? 's' : '');
-    document.getElementById('extraBagsVal').textContent = '$' + extraCost.toFixed(2);
-    extraLine.style.display = 'flex';
-  } else {
-    extraLine.style.display = 'none';
+  function selectDay(el, day) {
+    document.querySelectorAll('.day-card').forEach(d => d.classList.remove('selected'));
+    el.classList.add('selected');
+    selectedDay = day;
+    updatePickupSummary();
   }
 
-  // Beads
-  const beadsLine = document.getElementById('beadsLine');
-  if (beads) {
-    const beadsCost = numBags * 2;
-    total += beadsCost;
-    document.getElementById('beadsLabel').textContent = 'Fabric softener beads (' + numBags + ' bag' + (numBags > 1 ? 's' : '') + ')';
-    document.getElementById('beadsVal').textContent = '+$' + beadsCost.toFixed(2);
-    beadsLine.style.display = 'flex';
-  } else {
-    beadsLine.style.display = 'none';
+  function selectTime(el, time) {
+    // Time slots removed - pickup day only
   }
 
-  // Baby clothes
-  const babyLine = document.getElementById('babyLine');
-  if (baby) { total += 3; babyLine.style.display = 'flex'; }
-  else { babyLine.style.display = 'none'; }
-
-  // Stains
-  const stainsLine = document.getElementById('stainsLine');
-  if (stains) { stainsLine.style.display = 'flex'; }
-  else { stainsLine.style.display = 'none'; }
-
-  document.getElementById('totalVal').textContent = '$' + total.toFixed(2);
-}
-
-function submitForm() {
-  const firstName = document.getElementById('firstName').value.trim();
-  const lastName = document.getElementById('lastName').value.trim();
-  const phone = document.getElementById('phone').value.trim();
-  const address = document.getElementById('address').value.trim();
-  const detergent = document.getElementById('detergent').value;
-  const terms = document.getElementById('termsCheck').checked;
-  const bioConfirm = document.getElementById('bioConfirm').checked;
-
-  if (!firstName || !lastName || !phone || !address) {
-    alert('Please fill in all required fields (name, phone, and address).'); return;
+  function updatePickupSummary() {
+    const el = document.getElementById('pickupText');
+    if (!el) return;
+    if (selectedDay) {
+      el.textContent = selectedDay + ' — bag out by 7:00 AM';
+    } else {
+      el.textContent = 'No day selected yet';
+    }
   }
-  if (!detergent) { alert('Please select a detergent type.'); return; }
-  if (!selectedDay) { alert('Please select a pickup day.'); return; }
-  if (!selectedTime) { alert('Please select a pickup time window.'); return; }
-  if (!bioConfirm) { alert('Please confirm that your laundry does not contain any biohazardous materials.'); return; }
-  if (!terms) { alert('Please read and agree to the Terms & Conditions.'); return; }
 
-  document.getElementById('booking-form').style.display = 'none';
-  const msg = document.getElementById('successMsg');
-  msg.style.display = 'block';
-  msg.scrollIntoView({ behavior: 'smooth' });
-}
+  function updateSummary() {
+    var numBagsEl = document.getElementById('numBags');
+    var numBags = numBagsEl ? (parseInt(numBagsEl.value) || 1) : 1;
+    var beadsEl = document.getElementById('beads');
+    var babyEl = document.getElementById('babyClothes');
+    var stainsEl = document.getElementById('stains');
+    var beads = beadsEl ? beadsEl.checked : false;
+    var baby = babyEl ? babyEl.checked : false;
+    var stains = stainsEl ? stainsEl.checked : false;
+
+    // Tiered pricing: bag 1=$35, bags 2-5=$30 each, bags 6-10=$25 each
+    var total = 35;
+    if (numBags >= 2) total += (Math.min(numBags, 5) - 1) * 30;
+    if (numBags >= 6) total += (numBags - 5) * 25;
+
+    // Extra bags line
+    var extraLine = document.getElementById('extraBagsLine');
+    if (numBags > 1) {
+      var extraLabel = '';
+      var extraCost = total - 35;
+      if (numBags <= 5) {
+        extraLabel = (numBags - 1) + ' bag' + (numBags > 2 ? 's' : '') + ' @ $30 each';
+      } else {
+        extraLabel = '4 bags @ $30 + ' + (numBags - 5) + ' bag' + (numBags > 6 ? 's' : '') + ' @ $25';
+      }
+      var extraLabelEl = document.getElementById('extraBagsLabel');
+      var extraValEl = document.getElementById('extraBagsVal');
+      if (extraLabelEl) extraLabelEl.textContent = extraLabel;
+      if (extraValEl) extraValEl.textContent = '$' + extraCost.toFixed(2);
+      if (extraLine) extraLine.style.display = 'flex';
+    } else {
+      if (extraLine) extraLine.style.display = 'none';
+    }
+
+    // Beads at $3 per bag
+    var beadsLine = document.getElementById('beadsLine');
+    if (beads) {
+      var beadsCost = numBags * 3;
+      total += beadsCost;
+      var beadsLabelEl = document.getElementById('beadsLabel');
+      var beadsValEl = document.getElementById('beadsVal');
+      if (beadsLabelEl) beadsLabelEl.textContent = 'Fabric softener beads (' + numBags + ' bag' + (numBags > 1 ? 's' : '') + ')';
+      if (beadsValEl) beadsValEl.textContent = '+$' + beadsCost.toFixed(2);
+      if (beadsLine) beadsLine.style.display = 'flex';
+    } else {
+      if (beadsLine) beadsLine.style.display = 'none';
+    }
+
+    // Baby clothes
+    var babyLine = document.getElementById('babyLine');
+    if (baby) { total += 3; if (babyLine) babyLine.style.display = 'flex'; }
+    else { if (babyLine) babyLine.style.display = 'none'; }
+
+    // Stains
+    var stainsLine = document.getElementById('stainsLine');
+    if (stains) { if (stainsLine) stainsLine.style.display = 'flex'; }
+    else { if (stainsLine) stainsLine.style.display = 'none'; }
+
+    // Update totals
+    var totalValEl = document.getElementById('totalVal');
+    if (totalValEl) totalValEl.textContent = '$' + total.toFixed(2);
+    var orderTotalEl = document.getElementById('orderTotal');
+    if (orderTotalEl) orderTotalEl.textContent = '$' + total.toFixed(2);
+    var payNowTotal = document.getElementById('payNowTotal');
+    if (payNowTotal) payNowTotal.textContent = '$' + total.toFixed(2);
+  }
+
+  function switchMode(mode) {
+    const householdSection = document.getElementById('householdSection');
+    const gymSection = document.getElementById('gymSection');
+    const btns = document.querySelectorAll('.toggle-btn');
+    if (mode === 'household') {
+      householdSection.style.display = 'flex';
+      gymSection.style.display = 'none';
+      btns[0].classList.add('active');
+      btns[1].classList.remove('active');
+    } else {
+      householdSection.style.display = 'none';
+      gymSection.style.display = 'flex';
+      btns[1].classList.add('active');
+      btns[0].classList.remove('active');
+    }
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }
+
+  // Update bedding in summary
+  document.addEventListener('change', function(e) {
+    if (e.target.classList.contains('bedding-check')) {
+      updateSummary();
+    }
+  });
+
+  function submitGymForm() {
+    const name = document.getElementById('gymName').value.trim();
+    const biz = document.getElementById('gymBusiness').value.trim();
+    const phone = document.getElementById('gymPhone').value.trim();
+    const email = document.getElementById('gymEmail').value.trim();
+    const address = document.getElementById('gymAddress').value.trim();
+    const type = document.getElementById('gymType').value;
+    if (!name || !biz || !phone || !email || !address || !type) {
+      alert('Please fill in all required fields.'); return;
+    }
+    document.getElementById('gymForm').style.display = 'none';
+    document.getElementById('gymSuccess').style.display = 'block';
+    document.getElementById('gymSuccess').scrollIntoView({behavior:'smooth'});
+  }
+
+  function submitForm() {
+    const firstName = document.getElementById('firstName').value.trim();
+    const lastName = document.getElementById('lastName').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const address = document.getElementById('address').value.trim();
+    const detergent = document.getElementById('detergent').value;
+    const terms = document.getElementById('termsCheck').checked;
+    const bioConfirm = document.getElementById('bioConfirm').checked;
+
+    if (!firstName || !lastName || !phone || !address) {
+      alert('Please fill in all required fields (name, phone, and address).'); return;
+    }
+    if (!detergent) { alert('Please select a detergent type.'); return; }
+    if (!selectedDay) { alert('Please select a pickup day.'); return; }
+
+    if (!bioConfirm) { alert('Please confirm that your laundry does not contain any biohazardous materials.'); return; }
+    if (!terms) { alert('Please read and agree to the Terms & Conditions.'); return; }
+
+    document.getElementById('booking-form').style.display = 'none';
+    const msg = document.getElementById('successMsg');
+    msg.style.display = 'block';
+    msg.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  // ── PAY NOW DROPDOWN ──
+  function togglePayBtn() {
+    var cb = document.getElementById('tcAgree');
+    var btn = document.getElementById('payNowBtn');
+    var warning = document.getElementById('tcWarning');
+    if (!cb || !btn) return;
+    if (cb.checked) {
+      btn.disabled = false;
+      btn.style.background = 'linear-gradient(135deg,#0d2145,#1c3f72)';
+      btn.style.cursor = 'pointer';
+      btn.style.opacity = '1';
+      if (warning) warning.style.display = 'none';
+    } else {
+      btn.disabled = true;
+      btn.style.background = '#94a3b8';
+      btn.style.cursor = 'not-allowed';
+      btn.style.opacity = '0.7';
+      if (warning) warning.style.display = 'block';
+    }
+  }
+
+  function togglePayOptions() {
+    var cb = document.getElementById('tcAgree');
+    if (!cb || !cb.checked) {
+      alert('Please read and agree to the Terms and Conditions before proceeding.');
+      return;
+    }
+    var opts = document.getElementById('payOptions');
+    var arrow = document.getElementById('payArrow');
+    if (!opts) return;
+    if (opts.style.display === 'none') {
+      opts.style.display = 'block';
+      if (arrow) arrow.style.transform = 'rotate(180deg)';
+    } else {
+      opts.style.display = 'none';
+      if (arrow) arrow.style.transform = 'rotate(0deg)';
+    }
+  }
+
+  function continuePayment() {
+    var selected = document.querySelector('input[name="payMethod"]:checked');
+    if (!selected) {
+      alert('Please select a payment method to continue.');
+      return;
+    }
+    var method = selected.value;
+    var panels = ['paypal','venmo','cashapp','zelle'];
+    panels.forEach(function(p) {
+      var el = document.getElementById('panel-' + p);
+      if (el) el.style.display = 'none';
+    });
+    var panel = document.getElementById('panel-' + method);
+    if (panel) {
+      panel.style.display = 'block';
+      panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+    document.getElementById('payOptions').style.display = 'none';
+    var arrow = document.getElementById('payArrow');
+    if (arrow) arrow.style.transform = 'rotate(0deg)';
+  }
+
+  function resetPayment() {
+    var panels = ['paypal','venmo','cashapp','zelle'];
+    panels.forEach(function(p) {
+      var el = document.getElementById('panel-' + p);
+      if (el) el.style.display = 'none';
+    });
+    var opts = document.getElementById('payOptions');
+    if (opts) opts.style.display = 'block';
+    var arrow = document.getElementById('payArrow');
+    if (arrow) arrow.style.transform = 'rotate(180deg)';
+    var radios = document.querySelectorAll('input[name="payMethod"]');
+    radios.forEach(function(r) { r.checked = false; });
+  }
 </script>
 
 </body>
