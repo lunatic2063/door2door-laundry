@@ -208,25 +208,6 @@
   .household-section { display: flex; flex-direction: column; gap: 28px; }
   .gym-section { display: none; flex-direction: column; gap: 28px; }
 
-  /* BEDDING */
-  .bedding-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 4px; }
-  .bedding-item {
-    display: flex; align-items: center; justify-content: space-between;
-    background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 10px;
-    padding: 12px 14px; cursor: pointer; transition: border-color 0.2s;
-  }
-  .bedding-item:hover { border-color: #1b4fa8; }
-  .bedding-item.selected { border-color: #1b4fa8; background: #eff6ff; }
-  .bedding-left { display: flex; align-items: center; gap: 10px; }
-  .bedding-emoji { font-size: 20px; }
-  .bedding-name { font-family: "Quicksand", sans-serif; font-size: 13px; font-weight: 600; color: #0a2463; }
-  .bedding-size { font-size: 11px; color: #94a3b8; margin-top: 1px; }
-  .bedding-price { font-family: "Quicksand", sans-serif; font-size: 14px; font-weight: 700; color: #1b4fa8; }
-  .bedding-qty { display: flex; align-items: center; gap: 8px; margin-top: 8px; }
-  .bedding-qty input { width: 60px; text-align: center; padding: 6px; font-size: 14px; }
-  .qty-btn { width: 28px; height: 28px; border: 1.5px solid #cbd5e1; border-radius: 50%; background: #fff; font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-family: "Quicksand", sans-serif; font-weight: 700; color: #0a2463; transition: all 0.2s; }
-  .qty-btn:hover { background: #0a2463; color: #fff; border-color: #0a2463; }
-
   /* GYM FORM */
   .gym-highlight {
     background: linear-gradient(135deg, #1b5e20, #2e7d32);
@@ -344,9 +325,6 @@
     <div class="bag-note">
       ⚠️ <span><strong>Please note:</strong> Use a standard 13-gallon trash bag. Do not use ripped or damaged bags. If your bag is overstuffed, the excess weight will be charged at <strong>$2.00 per pound</strong>. We will notify you of any extra charges before processing your order.</span>
     </div>
-
-    <!-- BEDDING PRICING -->
-
   </div>
 
   <!-- BOOKING FORM -->
@@ -843,6 +821,8 @@
   </div>
 
 <script>
+  const FORMSPREE_URL = 'https://formspree.io/f/mwvavlll';
+
   let selectedDay = '';
   let selectedTime = '';
 
@@ -937,29 +917,23 @@
   function switchMode(mode) {
     const householdSection = document.getElementById('householdSection');
     const gymSection = document.getElementById('gymSection');
+    const payNowSection = document.getElementById('payNowSection');
     const btns = document.querySelectorAll('.toggle-btn');
     if (mode === 'household') {
       householdSection.style.display = 'flex';
       gymSection.style.display = 'none';
+      if (payNowSection) payNowSection.style.display = 'block';
       btns[0].classList.add('active');
       btns[1].classList.remove('active');
     } else {
       householdSection.style.display = 'none';
       gymSection.style.display = 'flex';
+      if (payNowSection) payNowSection.style.display = 'none';
       btns[1].classList.add('active');
       btns[0].classList.remove('active');
     }
     window.scrollTo({top: 0, behavior: 'smooth'});
   }
-
-  // Update bedding in summary
-  document.addEventListener('change', function(e) {
-    if (e.target.classList.contains('bedding-check')) {
-      updateSummary();
-    }
-  });
-
-  const FORMSPREE_URL = 'https://formspree.io/f/mwvavlll';
 
   function submitGymForm() {
     const name = document.getElementById('gymName').value.trim();
@@ -991,62 +965,14 @@
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify(payload)
-    }).then(r => {
+    }).then(function(r) {
       if (!r.ok) throw new Error('Network');
       document.getElementById('gymForm').style.display = 'none';
       document.getElementById('gymSuccess').style.display = 'block';
       document.getElementById('gymSuccess').scrollIntoView({behavior:'smooth'});
-    }).catch(() => alert('Something went wrong submitting your request. Please try again or call (260) 267-6508.'));
-  }
-
-  function submitForm() {
-    const firstName = document.getElementById('firstName').value.trim();
-    const lastName = document.getElementById('lastName').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    const address = document.getElementById('address').value.trim();
-    const detergent = document.getElementById('detergent').value;
-    const terms = document.getElementById('termsCheck').checked;
-    const bioConfirm = document.getElementById('bioConfirm').checked;
-
-    if (!firstName || !lastName || !phone || !address) {
-      alert('Please fill in all required fields (name, phone, and address).'); return;
-    }
-    if (!detergent) { alert('Please select a detergent type.'); return; }
-    if (!selectedDay) { alert('Please select a pickup day.'); return; }
-
-    if (!bioConfirm) { alert('Please confirm that your laundry does not contain any biohazardous materials.'); return; }
-    if (!terms) { alert('Please read and agree to the Terms & Conditions.'); return; }
-
-    const payload = {
-      _subject: 'New Pickup Request — ' + firstName + ' ' + lastName,
-      submission_type: 'Household Booking',
-      first_name: firstName,
-      last_name: lastName,
-      phone: phone,
-      email: document.getElementById('email').value.trim(),
-      pickup_address: address,
-      pickup_day: selectedDay,
-      num_bags: document.getElementById('numBags').value,
-      detergent: detergent,
-      water_temp: document.getElementById('waterTemp').value,
-      fabric_softener_beads: document.getElementById('beads').checked ? 'Yes (+$3/bag)' : 'No',
-      baby_clothes_dreft: document.getElementById('babyClothes').checked ? 'Yes (+$3)' : 'No',
-      stain_pretreatment: document.getElementById('stains').checked ? 'Yes' : 'No',
-      allergen_disclosure: document.getElementById('allergens').value.trim(),
-      biohazard_confirmed: 'Yes',
-      terms_agreed: 'Yes'
-    };
-    fetch(FORMSPREE_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify(payload)
-    }).then(r => {
-      if (!r.ok) throw new Error('Network');
-      document.getElementById('booking-form').style.display = 'none';
-      const msg = document.getElementById('successMsg');
-      msg.style.display = 'block';
-      msg.scrollIntoView({ behavior: 'smooth' });
-    }).catch(() => alert('Something went wrong submitting your booking. Please try again or call (260) 267-6508.'));
+    }).catch(function() {
+      alert('Something went wrong submitting your request. Please try again or call (260) 267-6508.');
+    });
   }
 
   // ── PAY NOW DROPDOWN ──
