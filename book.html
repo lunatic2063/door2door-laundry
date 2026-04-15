@@ -959,6 +959,8 @@
     }
   });
 
+  const FORMSPREE_URL = 'https://formspree.io/f/mwvavlll';
+
   function submitGymForm() {
     const name = document.getElementById('gymName').value.trim();
     const biz = document.getElementById('gymBusiness').value.trim();
@@ -969,9 +971,32 @@
     if (!name || !biz || !phone || !email || !address || !type) {
       alert('Please fill in all required fields.'); return;
     }
-    document.getElementById('gymForm').style.display = 'none';
-    document.getElementById('gymSuccess').style.display = 'block';
-    document.getElementById('gymSuccess').scrollIntoView({behavior:'smooth'});
+    const items = Array.from(document.querySelectorAll('input[name="gymItems"]:checked')).map(c => c.value).join(', ');
+    const payload = {
+      _subject: 'New Gym/Business Quote Request — ' + biz,
+      submission_type: 'Gym / Business Quote',
+      contact_name: name,
+      business_name: biz,
+      phone: phone,
+      email: email,
+      facility_address: address,
+      facility_type: type,
+      estimated_weekly_bags: document.getElementById('gymVolume').value,
+      items_to_wash: items,
+      preferred_pickup_day: document.getElementById('gymDay').value,
+      service_frequency: document.getElementById('gymFreq').value,
+      notes: document.getElementById('gymNotes').value.trim()
+    };
+    fetch(FORMSPREE_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload)
+    }).then(r => {
+      if (!r.ok) throw new Error('Network');
+      document.getElementById('gymForm').style.display = 'none';
+      document.getElementById('gymSuccess').style.display = 'block';
+      document.getElementById('gymSuccess').scrollIntoView({behavior:'smooth'});
+    }).catch(() => alert('Something went wrong submitting your request. Please try again or call (260) 267-6508.'));
   }
 
   function submitForm() {
@@ -992,10 +1017,36 @@
     if (!bioConfirm) { alert('Please confirm that your laundry does not contain any biohazardous materials.'); return; }
     if (!terms) { alert('Please read and agree to the Terms & Conditions.'); return; }
 
-    document.getElementById('booking-form').style.display = 'none';
-    const msg = document.getElementById('successMsg');
-    msg.style.display = 'block';
-    msg.scrollIntoView({ behavior: 'smooth' });
+    const payload = {
+      _subject: 'New Pickup Request — ' + firstName + ' ' + lastName,
+      submission_type: 'Household Booking',
+      first_name: firstName,
+      last_name: lastName,
+      phone: phone,
+      email: document.getElementById('email').value.trim(),
+      pickup_address: address,
+      pickup_day: selectedDay,
+      num_bags: document.getElementById('numBags').value,
+      detergent: detergent,
+      water_temp: document.getElementById('waterTemp').value,
+      fabric_softener_beads: document.getElementById('beads').checked ? 'Yes (+$3/bag)' : 'No',
+      baby_clothes_dreft: document.getElementById('babyClothes').checked ? 'Yes (+$3)' : 'No',
+      stain_pretreatment: document.getElementById('stains').checked ? 'Yes' : 'No',
+      allergen_disclosure: document.getElementById('allergens').value.trim(),
+      biohazard_confirmed: 'Yes',
+      terms_agreed: 'Yes'
+    };
+    fetch(FORMSPREE_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload)
+    }).then(r => {
+      if (!r.ok) throw new Error('Network');
+      document.getElementById('booking-form').style.display = 'none';
+      const msg = document.getElementById('successMsg');
+      msg.style.display = 'block';
+      msg.scrollIntoView({ behavior: 'smooth' });
+    }).catch(() => alert('Something went wrong submitting your booking. Please try again or call (260) 267-6508.'));
   }
 
   // ── PAY NOW DROPDOWN ──
