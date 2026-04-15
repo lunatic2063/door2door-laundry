@@ -213,8 +213,6 @@ letter-spacing: 0.1em; text-transform: uppercase; color: var(--sky-light); margi
 .check-label { font-size: 0.88rem; color: var(--text); line-height: 1.4; }
 .check-label small { display: block; font-size: 0.75rem; color: var(--gray); margin-top: 2px; }
 
-.bedding-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-
 /* SUMMARY */
 .summary-box { background: var(--light-bg); border: 1.5px solid var(--border); border-radius: 14px; padding: 22px; margin-bottom: 18px; }
 .sum-title { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 0.95rem; color: var(--navy); margin-bottom: 12px; }
@@ -406,7 +404,6 @@ footer { background: var(--navy-dark); color: rgba(255,255,255,0.65); padding: 6
 @media (max-width: 900px) {
 .contact-grid { grid-template-columns: 1fr; }
 .footer-grid { grid-template-columns: 1fr 1fr; }
-.bedding-grid { grid-template-columns: 1fr; }
 .payment-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 600px) {
@@ -495,10 +492,9 @@ footer { background: var(--navy-dark); color: rgba(255,255,255,0.65); padding: 6
 <!-- SERVICES PAGE -->
 <div class="page" id="page-services">
 <div class="section">
-<div class="reveal"><div class="section-label">What We Offer</div><div class="section-title">Our <span>Services</span></div><p class="section-desc">From everyday wash &amp; fold to bedding, baby clothes, and gym gear — we've got you covered.</p></div>
+<div class="reveal"><div class="section-label">What We Offer</div><div class="section-title">Our <span>Services</span></div><p class="section-desc">From everyday wash &amp; fold to baby clothes and gym gear — we've got you covered.</p></div>
 <div class="services-grid">
 <div class="service-card reveal reveal-delay-1"><span class="service-icon">👕</span><h3>Wash &amp; Fold</h3><p>Everyday laundry washed, dried, and neatly folded. Choice of Tide, Tide Free &amp; Clear, or Ecos Natural.</p><span class="service-price">$35 first bag · $30 each additional</span></div>
-<div class="service-card reveal reveal-delay-2"><span class="service-icon">🛏️</span><h3>Bedding &amp; Linens</h3><p>Sheets, comforters, blankets, and pillowcases professionally cleaned. Place in a separate bag labeled "Bedding."</p><span class="service-price">From $5 per item</span></div>
 <div class="service-card reveal reveal-delay-3"><span class="service-icon">👶</span><h3>Baby Clothes</h3><p>Gentle Dreft washing for baby's clothes. Place in a separate smaller bag inside your 13-gallon bag.</p><span class="service-price">+ $3 add-on</span></div>
 <div class="service-card reveal reveal-delay-4"><span class="service-icon">🥋</span><h3>Gym &amp; Dojo Gear</h3><p>Gi's, rashguards, uniforms, towels, and workout clothes. Weekly recurring contracts for studios.</p><span class="service-price">From $35 · Weekly plans available</span></div>
 <div class="service-card reveal reveal-delay-1"><span class="service-icon">🌸</span><h3>Stain Pretreatment</h3><p>Tough stains? Place stained items in a separate smaller bag inside your 13-gallon bag. We'll pretreat them.</p><span class="service-price">Always FREE</span></div>
@@ -538,7 +534,6 @@ footer { background: var(--navy-dark); color: rgba(255,255,255,0.65); padding: 6
 <ul class="pricing-features">
 <li><span class="check">✓</span> Softener beads +$3/bag</li>
 <li><span class="check">✓</span> Baby clothes (Dreft) +$3</li>
-<li><span class="check">✓</span> Bedding items from $5</li>
 <li><span class="check">✓</span> Stain pretreatment FREE</li>
 <li><span class="check">✓</span> All preferences honored</li>
 </ul>
@@ -559,19 +554,6 @@ footer { background: var(--navy-dark); color: rgba(255,255,255,0.65); padding: 6
 </div>
 </div>
 
-<div class="card reveal" style="margin-top:40px;">
-<div class="card-title">🛏️ Bedding Pricing</div>
-<div class="card-sub">Place bedding in a separate bag labeled "Bedding" — priced per item.</div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;">
-<div class="price-row"><div><div class="pr-name">Sheet Set (Twin/Full)</div><div class="pr-desc">Flat, fitted &amp; pillowcase(s)</div></div><div class="pr-val">$10</div></div>
-<div class="price-row"><div><div class="pr-name">Sheet Set (Queen/King)</div><div class="pr-desc">Flat, fitted &amp; pillowcase(s)</div></div><div class="pr-val">$12</div></div>
-<div class="price-row"><div><div class="pr-name">Twin/Full Comforter</div><div class="pr-desc">Or duvet cover</div></div><div class="pr-val">$15</div></div>
-<div class="price-row"><div><div class="pr-name">Queen Comforter</div><div class="pr-desc">Or duvet cover</div></div><div class="pr-val">$18</div></div>
-<div class="price-row featured"><div><div class="pr-name">King Comforter</div><div class="pr-desc">Or duvet cover</div></div><div class="pr-val">$22</div></div>
-<div class="price-row"><div><div class="pr-name">Blanket / Throw</div></div><div class="pr-val">$8</div></div>
-<div class="price-row"><div><div class="pr-name">Pillow Covers / Shams</div><div class="pr-desc">Per pair</div></div><div class="pr-val">$5</div></div>
-</div>
-</div>
 </div>
 </div>
 
@@ -655,18 +637,6 @@ footer { background: var(--navy-dark); color: rgba(255,255,255,0.65); padding: 6
 <div class="fg"><label>Stain Pretreatment <span class="tag-free">FREE</span></label>
 <label class="check-group"><input type="checkbox" id="hST"/><span class="check-label">Yes, some items have stains<small>Place stained items in a separate smaller bag inside your 13-gallon bag.</small></span></label>
 </div>
-<div class="fg"><label>🛏️ Bedding Items <span class="tag-up">Priced per item</span></label>
-<div class="card-sub" style="margin-bottom:8px;">Place bedding in a separate bag labeled "Bedding."</div>
-<div class="bedding-grid">
-<label class="check-group"><input type="checkbox" class="bck" data-price="10" data-name="Sheet Set Twin/Full"/><span class="check-label">🛏️ Sheet Set Twin/Full — $10</span></label>
-<label class="check-group"><input type="checkbox" class="bck" data-price="12" data-name="Sheet Set Queen/King"/><span class="check-label">🛏️ Sheet Set Queen/King — $12</span></label>
-<label class="check-group"><input type="checkbox" class="bck" data-price="15" data-name="Twin/Full Comforter"/><span class="check-label">🛌 Twin/Full Comforter — $15</span></label>
-<label class="check-group"><input type="checkbox" class="bck" data-price="18" data-name="Queen Comforter"/><span class="check-label">🛌 Queen Comforter — $18</span></label>
-<label class="check-group"><input type="checkbox" class="bck" data-price="22" data-name="King Comforter"/><span class="check-label">🛌 King Comforter — $22</span></label>
-<label class="check-group"><input type="checkbox" class="bck" data-price="8" data-name="Blanket/Throw"/><span class="check-label">🧣 Blanket/Throw — $8</span></label>
-<label class="check-group"><input type="checkbox" class="bck" data-price="5" data-name="Pillow Covers/Shams"/><span class="check-label">🛏️ Pillow Covers/Shams — $5</span></label>
-</div>
-</div>
 <div class="fg"><label>Allergen &amp; Sensitivity Disclosure <span class="tag-imp">IMPORTANT</span></label>
 <textarea id="hAL" rows="2" placeholder="List any known detergent allergies or skin sensitivities. Type 'None' if not applicable."></textarea>
 <div class="fg-hint">We use Tide, Tide Free &amp; Clear, and Ecos Natural. Please disclose any sensitivities.</div>
@@ -683,7 +653,6 @@ footer { background: var(--navy-dark); color: rgba(255,255,255,0.65); padding: 6
 <div class="sum-line" id="sBeads" style="display:none;"><span id="sBeadsLbl">Softener beads</span><span id="sBeadsVal"></span></div>
 <div class="sum-line" id="sBaby" style="display:none;"><span>Baby clothes (Dreft)</span><span>$3.00</span></div>
 <div class="sum-line" id="sStains" style="display:none;"><span>Stain pretreatment</span><span style="color:var(--green);">FREE</span></div>
-<div id="sBeddingLines"></div>
 <div class="sum-line"><span>Pickup &amp; delivery</span><span style="color:var(--green);">FREE</span></div>
 <div class="sum-total"><span>Estimated Total</span><span id="sTotal">$35.00</span></div>
 <div class="sum-pickup"><strong>Pickup:</strong> <span id="sPickup">No day/time selected yet</span></div>
@@ -720,7 +689,7 @@ footer { background: var(--navy-dark); color: rgba(255,255,255,0.65); padding: 6
 <div class="terms-scroll">
 <h4>1. Service Area</h4>We serve Fort Wayne and New Haven, IN. Pickups are Monday, Wednesday, and Friday between 7:00 AM and 11:00 AM only.
 <h4>2. Bag Requirements</h4>Use a standard 13-gallon trash bag. No torn bags. Overstuffed bags are charged at <strong>$2.00 per pound</strong> for excess weight. You will be notified before any extra charges are applied.
-<h4>3. Special Items</h4>Baby clothes go in a separate smaller bag inside the 13-gallon bag. Stained items go in a separate smaller bag. Bedding goes in a separate bag labeled "Bedding."
+<h4>3. Special Items</h4>Baby clothes go in a separate smaller bag inside the 13-gallon bag. Stained items go in a separate smaller bag.
 <h4>4. Pockets &amp; Personal Items</h4>We are not responsible for items left in pockets — cash, cards, jewelry, electronics. Please check all pockets before bagging.
 <h4>5. Pre-Existing Damage</h4>We are not responsible for pre-existing damage including fading, shrinking of non-machine-washable items, loose buttons, broken zippers, or fabric wear.
 <h4>6. Turnaround Time</h4>Standard turnaround is timeframe confirmed at booking. Delays due to weather or high volume will be communicated promptly.
@@ -774,7 +743,7 @@ footer { background: var(--navy-dark); color: rgba(255,255,255,0.65); padding: 6
 <div class="fg half"><label>Weekly Volume</label><select id="gV"><option value="">— Approximate —</option><option>1–3 bags/week</option><option>4–6 bags/week</option><option>7–10 bags/week</option><option>10+ bags/week</option><option>Not sure</option></select></div>
 </div>
 <div class="fg"><label>What do you need washed?</label>
-<div class="bedding-grid">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
 <label class="check-group"><input type="checkbox"/><span class="check-label">🥋 Gi's &amp; Uniforms</span></label>
 <label class="check-group"><input type="checkbox"/><span class="check-label">🩱 Rashguards &amp; Shorts</span></label>
 <label class="check-group"><input type="checkbox"/><span class="check-label">🛁 Towels &amp; Wraps</span></label>
@@ -833,7 +802,7 @@ footer { background: var(--navy-dark); color: rgba(255,255,255,0.65); padding: 6
 </div>
 <div class="form-grp"><label>Email *</label><input type="email" id="cEM" placeholder="jane@email.com"/></div>
 <div class="form-grp"><label>Phone</label><input type="tel" id="cPH" placeholder="(260) 555-0000"/></div>
-<div class="form-grp"><label>Service Interested In *</label><select id="cSV"><option value="">— Select —</option><option>Wash &amp; Fold</option><option>Bedding &amp; Linens</option><option>Baby Clothes (Dreft)</option><option>Gym / Dojo Service</option><option>General Question</option></select></div>
+<div class="form-grp"><label>Service Interested In *</label><select id="cSV"><option value="">— Select —</option><option>Wash &amp; Fold</option><option>Baby Clothes (Dreft)</option><option>Gym / Dojo Service</option><option>General Question</option></select></div>
 <div class="form-grp"><label>Message</label><textarea id="cMS" placeholder="Tell us how we can help..."></textarea></div>
 <button class="form-submit" onclick="submitContact()">Send Message →</button>
 <p class="form-note">🔒 Your info is private. No spam, ever.</p>
@@ -1036,7 +1005,7 @@ Questions? Call or text 269-267-6508 · door2doorlaundrysolutions.com
 <span class="footer-tag">We Pick Up. We Clean. We Deliver.</span>
 </div>
 <div class="footer-col"><h4>Pages</h4><ul><li onclick="showPage('home')">Home</li><li onclick="showPage('services')">Services</li><li onclick="showPage('pricing')">Pricing</li><li onclick="showPage('booking')">Book Pickup</li><li onclick="showPage('reviews')">Reviews</li></ul></div>
-<div class="footer-col"><h4>Services</h4><ul><li onclick="showPage('services')">Wash &amp; Fold</li><li onclick="showPage('services')">Bedding &amp; Linens</li><li onclick="showPage('services')">Baby Clothes</li><li onclick="showPage('services')">Gym &amp; Dojo Gear</li></ul></div>
+<div class="footer-col"><h4>Services</h4><ul><li onclick="showPage('services')">Wash &amp; Fold</li><li onclick="showPage('services')">Baby Clothes</li><li onclick="showPage('services')">Gym &amp; Dojo Gear</li></ul></div>
 <div class="footer-col"><h4>Contact Us</h4><div class="footer-contact">
 <div class="contact-row-f">📞 &nbsp;269-267-6508</div>
 <div class="contact-row-f">📧 &nbsp;<a href="mailto:door2doorlaundryco@gmail.com" style="color:inherit;">door2doorlaundryco@gmail.com</a></div>
@@ -1170,26 +1139,9 @@ else { if (sBabyEl) sBabyEl.style.display = 'none'; }
 var sStainsEl = document.getElementById('sStains');
 if (sStainsEl) sStainsEl.style.display = stains ? 'flex' : 'none';
 
-var beddingItems = document.querySelectorAll('.bck:checked');
-var bHtml = '';
-var bTotal = 0;
-for (var i = 0; i < beddingItems.length; i++) {
-var price = parseFloat(beddingItems[i].getAttribute('data-price'));
-var name = beddingItems[i].getAttribute('data-name');
-bTotal += price;
-bHtml += '<div class="sum-line"><span>' + name + '</span><span>$' + price.toFixed(2) + '</span></div>';
-}
-var bLines = document.getElementById('sBeddingLines');
-if (bLines) bLines.innerHTML = bHtml;
-total += bTotal;
-
 var totalEl = document.getElementById('sTotal');
 if (totalEl) totalEl.textContent = '$' + total.toFixed(2);
 };
-
-document.addEventListener('change', function(e) {
-if (e.target && e.target.classList.contains('bck')) calcTotal();
-});
 
 var FORMSPREE_ID = 'YOUR_FORMSPREE_ID';
 
@@ -1219,9 +1171,6 @@ var stains = document.getElementById('hST') ? document.getElementById('hST').che
 var allergens = document.getElementById('hAL') ? document.getElementById('hAL').value : '';
 var notes = document.getElementById('hNT') ? document.getElementById('hNT').value : '';
 var temp = document.getElementById('hTP') ? document.getElementById('hTP').value : '';
-var beddingItems = [];
-var bckItems = document.querySelectorAll('.bck:checked');
-for (var i = 0; i < bckItems.length; i++) beddingItems.push(bckItems[i].getAttribute('data-name'));
 
 var formData = {
 _subject: 'New Pickup Request - Door2Door Laundry Solutions',
@@ -1236,7 +1185,6 @@ water_temp: temp,
 fabric_softener_beads: beads ? 'Yes (+$3/bag)' : 'No',
 baby_clothes_dreft: baby ? 'Yes (+$3)' : 'No',
 stain_pretreatment: stains ? 'Yes (FREE)' : 'No',
-bedding_items: beddingItems.length > 0 ? beddingItems.join(', ') : 'None',
 allergen_disclosure: allergens || 'None provided',
 special_instructions: notes || 'None',
 order_total: document.getElementById('sTotal') ? document.getElementById('sTotal').textContent : '$35.00'
