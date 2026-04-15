@@ -565,10 +565,6 @@
     </div>
   </div>
 
-  <!-- SUBMIT BOOKING BUTTON -->
-  <button class="submit-btn" onclick="submitForm()">📬 Submit Booking</button>
-  <div class="green-note">We'll confirm your pickup by text or email within a few hours.</div>
-
   <!-- SUCCESS MESSAGE -->
   <div class="success-msg" id="successMsg">
     <div class="check">🎉</div>
@@ -1099,19 +1095,65 @@
       return;
     }
     var method = selected.value;
-    var panels = ['paypal','venmo','cashapp','zelle'];
-    panels.forEach(function(p) {
-      var el = document.getElementById('panel-' + p);
-      if (el) el.style.display = 'none';
-    });
-    var panel = document.getElementById('panel-' + method);
-    if (panel) {
-      panel.style.display = 'block';
-      panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+    // Validate household booking fields before submitting
+    var firstName = document.getElementById('firstName').value.trim();
+    var lastName = document.getElementById('lastName').value.trim();
+    var phone = document.getElementById('phone').value.trim();
+    var address = document.getElementById('address').value.trim();
+    var detergent = document.getElementById('detergent').value;
+    var bioConfirm = document.getElementById('bioConfirm').checked;
+    if (!firstName || !lastName || !phone || !address) {
+      alert('Please fill in your name, phone, and pickup address before continuing.'); return;
     }
-    document.getElementById('payOptions').style.display = 'none';
-    var arrow = document.getElementById('payArrow');
-    if (arrow) arrow.style.transform = 'rotate(0deg)';
+    if (!detergent) { alert('Please select a detergent type.'); return; }
+    if (!selectedDay) { alert('Please select a pickup day.'); return; }
+    if (!bioConfirm) { alert('Please confirm that your laundry does not contain any biohazardous materials.'); return; }
+
+    var payload = {
+      _subject: 'New Pickup Request — ' + firstName + ' ' + lastName,
+      submission_type: 'Household Booking',
+      first_name: firstName,
+      last_name: lastName,
+      phone: phone,
+      email: document.getElementById('email').value.trim(),
+      pickup_address: address,
+      pickup_day: selectedDay,
+      num_bags: document.getElementById('numBags').value,
+      detergent: detergent,
+      water_temp: document.getElementById('waterTemp').value,
+      fabric_softener_beads: document.getElementById('beads').checked ? 'Yes (+$3/bag)' : 'No',
+      baby_clothes_dreft: document.getElementById('babyClothes').checked ? 'Yes (+$3)' : 'No',
+      stain_pretreatment: document.getElementById('stains').checked ? 'Yes' : 'No',
+      allergen_disclosure: document.getElementById('allergens').value.trim(),
+      biohazard_confirmed: 'Yes',
+      terms_agreed: 'Yes',
+      order_total: document.getElementById('payNowTotal').textContent,
+      payment_method: method
+    };
+
+    fetch(FORMSPREE_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload)
+    }).then(function(r) {
+      if (!r.ok) throw new Error('Network');
+      var panels = ['paypal','venmo','cashapp','zelle'];
+      panels.forEach(function(p) {
+        var el = document.getElementById('panel-' + p);
+        if (el) el.style.display = 'none';
+      });
+      var panel = document.getElementById('panel-' + method);
+      if (panel) {
+        panel.style.display = 'block';
+        panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+      document.getElementById('payOptions').style.display = 'none';
+      var arrow = document.getElementById('payArrow');
+      if (arrow) arrow.style.transform = 'rotate(0deg)';
+    }).catch(function() {
+      alert('Something went wrong submitting your booking. Please try again or call (260) 267-6508.');
+    });
   }
 
   function resetPayment() {
