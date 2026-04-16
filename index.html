@@ -223,19 +223,14 @@ letter-spacing: 0.1em; text-transform: uppercase; color: var(--sky-light); margi
 
 /* PAYMENT */
 .payment-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.pay-card { background: var(--light-bg); border: 1.5px solid var(--border); border-radius: 14px; padding: 16px; display: flex; align-items: center; gap: 12px; }
+.pay-card { background: var(--light-bg); border: 1.5px solid var(--border); border-radius: 14px; padding: 16px; display: flex; align-items: center; gap: 12px; cursor: pointer; transition: border-color 0.2s, transform 0.2s; }
+.pay-card:hover { border-color: var(--navy); transform: translateY(-1px); }
 .pay-icon { font-size: 26px; flex-shrink: 0; }
 .pay-name { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.88rem; color: var(--navy); }
 .pay-desc { font-size: 0.75rem; color: var(--gray); margin: 2px 0; }
 .pay-handle { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.78rem; }
 .c-blue { color: var(--sky); } .c-green { color: var(--green-dark); } .c-amber { color: #92400e; } .c-gray { color: var(--gray); }
 
-.square-block { background: linear-gradient(135deg, var(--navy), #1a5d8f); border-radius: 14px; padding: 26px; text-align: center; margin-bottom: 20px; }
-.square-block h4 { font-family: 'Montserrat', sans-serif; font-weight: 800; color: white; font-size: 1rem; margin-bottom: 6px; }
-.square-block p { font-size: 0.82rem; color: rgba(255,255,255,0.65); margin-bottom: 18px; }
-.sq-btn { background: white; border-radius: 10px; padding: 13px 28px; display: inline-block; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.9rem; color: var(--navy); margin-bottom: 16px; cursor: pointer; }
-.pay-badges { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; }
-.pay-badge { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); color: white; font-size: 0.72rem; font-weight: 600; padding: 4px 12px; border-radius: 20px; font-family: 'Montserrat', sans-serif; }
 
 .pay-policy { background: #fff8e1; border: 1.5px solid #fde047; border-radius: 12px; padding: 15px 18px; display: flex; gap: 12px; margin-top: 16px; }
 .pay-policy p { font-size: 0.8rem; color: #92400e; line-height: 1.6; }
@@ -655,23 +650,11 @@ footer { background: var(--navy-dark); color: rgba(255,255,255,0.65); padding: 6
 <div class="card reveal">
 <div class="card-title">💳 Payment</div>
 <div class="card-sub">First-time customers pay before pickup. Returning customers pay at delivery.</div>
-<div class="square-block">
-<h4>Pay Securely Online</h4>
-<p>Powered by Square — Apple Pay, Google Pay &amp; all major cards</p>
-<div class="sq-btn">💳 Pay with Square — Coming Soon</div>
-<div class="pay-badges">
-<div class="pay-badge"> Apple Pay</div>
-<div class="pay-badge"> Google Pay</div>
-<div class="pay-badge">💳 Visa / Mastercard</div>
-<div class="pay-badge">💳 Amex / Discover</div>
-</div>
-</div>
-<div style="display:flex;align-items:center;gap:12px;margin:18px 0;"><div style="flex:1;height:1px;background:var(--border);"></div><span style="font-family:'Montserrat',sans-serif;font-size:0.72rem;font-weight:700;color:var(--gray);letter-spacing:2px;">OR PAY DIRECTLY</span><div style="flex:1;height:1px;background:var(--border);"></div></div>
 <div class="payment-grid">
-<div class="pay-card"><div class="pay-icon">💸</div><div><div class="pay-name">Venmo</div><div class="pay-desc">Fast &amp; free</div><div class="pay-handle c-blue">@Door2DoorLaundry</div></div></div>
-<div class="pay-card"><div class="pay-icon">💵</div><div><div class="pay-name">Cash App</div><div class="pay-desc">Quick &amp; simple</div><div class="pay-handle c-green">$Door2DoorLaundry</div></div></div>
-<div class="pay-card"><div class="pay-icon">🏦</div><div><div class="pay-name">Zelle</div><div class="pay-desc">Built into your bank</div><div class="pay-handle c-amber">269-267-6508</div></div></div>
-<div class="pay-card"><div class="pay-icon">💰</div><div><div class="pay-name">Cash</div><div class="pay-desc">Always welcome</div><div class="pay-handle c-gray">Exact change appreciated</div></div></div>
+<a href="https://www.paypal.com/paypalme/Door2DoorLaundry" target="_blank" rel="noopener" class="pay-card" style="text-decoration:none;color:inherit;"><div class="pay-icon">💳</div><div><div class="pay-name">PayPal</div><div class="pay-desc">Tap to pay by card or balance</div><div class="pay-handle c-blue">paypal.me/Door2DoorLaundry</div></div></a>
+<a href="https://venmo.com/Door2DoorLaundry" target="_blank" rel="noopener" class="pay-card" style="text-decoration:none;color:inherit;"><div class="pay-icon">💸</div><div><div class="pay-name">Venmo</div><div class="pay-desc">Tap to open Venmo</div><div class="pay-handle c-blue">@Door2DoorLaundry</div></div></a>
+<a href="https://cash.app/$Door2DoorLaundry" target="_blank" rel="noopener" class="pay-card" style="text-decoration:none;color:inherit;"><div class="pay-icon">💵</div><div><div class="pay-name">Cash App</div><div class="pay-desc">Tap to open Cash App</div><div class="pay-handle c-green">$Door2DoorLaundry</div></div></a>
+<div class="pay-card"><div class="pay-icon">🏦</div><div><div class="pay-name">Zelle</div><div class="pay-desc">Send via your bank app</div><div class="pay-handle c-amber">(260) 267-6508</div></div></div>
 </div>
 <div class="pay-policy"><div style="font-size:20px;">📋</div><p><strong>Payment Policy:</strong> First-time customers pay before pickup. Returning customers pay at delivery. Unpaid balances after your confirmed window incur a $5 late fee.</p></div>
 </div>
@@ -686,7 +669,7 @@ footer { background: var(--navy-dark); color: rgba(255,255,255,0.65); padding: 6
 <h4>4. Pockets &amp; Personal Items</h4>We are not responsible for items left in pockets — cash, cards, jewelry, electronics. Please check all pockets before bagging.
 <h4>5. Pre-Existing Damage</h4>We are not responsible for pre-existing damage including fading, shrinking of non-machine-washable items, loose buttons, broken zippers, or fabric wear.
 <h4>6. Turnaround Time</h4>Standard turnaround is timeframe confirmed at booking. Delays due to weather or high volume will be communicated promptly.
-<h4>7. Payment</h4>First-time customers pay before pickup. Returning customers pay at delivery. Accepted: Square (Apple Pay, Google Pay, all major cards), Venmo, Cash App, Zelle, and cash.
+<h4>7. Payment</h4>First-time customers pay before pickup. Returning customers pay at delivery. Accepted: PayPal, Venmo, Cash App, Zelle, and cash.
 <h4>8. Late Payment &amp; Non-Payment</h4>Unpaid balances after your confirmed window incur a $5 late fee. After 48 hours, service may be suspended. Repeated non-payment may result in permanent termination and pursuit through small claims court.
 <h4>9. Cancellations</h4>Cancel or reschedule at least 12 hours before pickup by texting 269-267-6508. Late cancellations may incur a fee.
 <h4>10. Lost Items</h4>We take great care with every load. We are not liable for items that cannot be located due to improper bagging.

@@ -504,7 +504,7 @@
       Standard turnaround is 24–48 hours. We will notify you when your laundry is ready for delivery. Delays due to weather, high volume, or other unforeseen circumstances will be communicated as soon as possible.
 
       <h4>7. Payment</h4>
-      <strong>First-time customers</strong> are required to pay in full before pickup to confirm their booking. <strong>Returning customers in good standing</strong> may pay at the time of delivery. Accepted payment methods include Square (Apple Pay, Google Pay, all major credit/debit cards), Venmo (@Door2DoorLaundry), Cash App ($Door2DoorLaundry), Zelle ((260) 267-6508), and cash.
+      <strong>First-time customers</strong> are required to pay in full before pickup to confirm their booking. <strong>Returning customers in good standing</strong> may pay at the time of delivery. Accepted payment methods include PayPal (paypal.me/Door2DoorLaundry), Venmo (@Door2DoorLaundry), Cash App ($Door2DoorLaundry), Zelle ((260) 267-6508), and cash.
       <h4>8. Payment Policy</h4>
       Payment is due at the time of service. First-time customers are required to pay before pickup to confirm their booking. Returning customers pay at the time of delivery. Late payments may be subject to a late fee. Non-payment may result in suspension of service.
 
@@ -709,105 +709,61 @@
       </button>
       <div id="tcWarning" style="text-align:center;font-size:12px;color:#94a3b8;margin-top:6px;">Please agree to the Terms and Conditions above to continue.</div>
 
-      <!-- DROPDOWN OPTIONS -->
+      <!-- DIRECT PAY METHODS -->
       <div id="payOptions" style="display:none;margin-top:12px;background:white;border:1.5px solid #d6e4f0;border-radius:14px;overflow:hidden;box-shadow:0 8px 30px rgba(28,63,114,0.12);">
 
-        <div style="padding:16px 20px;border-bottom:1px solid #f0f4f8;font-family:'Quicksand',sans-serif;font-weight:700;font-size:13px;color:#6b7a90;letter-spacing:1px;text-transform:uppercase;">Select a payment method</div>
+        <div style="padding:16px 20px;border-bottom:1px solid #f0f4f8;font-family:'Quicksand',sans-serif;font-weight:700;font-size:13px;color:#6b7a90;letter-spacing:1px;text-transform:uppercase;">Tap a payment method to pay now</div>
 
         <!-- PayPal -->
-        <label style="display:flex;align-items:center;gap:14px;padding:16px 20px;cursor:pointer;border-bottom:1px solid #f0f4f8;transition:background 0.2s;" onmouseover="this.style.background='#f8faff'" onmouseout="this.style.background='white'">
-          <input type="radio" name="payMethod" value="paypal" style="width:18px;height:18px;accent-color:#0d2145;flex-shrink:0;"/>
+        <div onclick="payWith('paypal')" style="display:flex;align-items:center;gap:14px;padding:18px 20px;cursor:pointer;border-bottom:1px solid #f0f4f8;transition:background 0.2s;" onmouseover="this.style.background='#f8faff'" onmouseout="this.style.background='white'">
           <span style="font-size:26px;">&#x1F4B3;</span>
           <div style="flex:1;">
             <div style="font-family:'Quicksand',sans-serif;font-weight:700;font-size:15px;color:#0d2145;">PayPal</div>
-            <div style="font-size:12px;color:#6b7a90;">Pay by card or PayPal balance — secure checkout</div>
+            <div style="font-size:12px;color:#6b7a90;">paypal.me/Door2DoorLaundry — pay by card or balance</div>
           </div>
-        </label>
+          <span style="font-size:18px;color:#94a3b8;">&#8594;</span>
+        </div>
 
         <!-- Venmo -->
-        <label style="display:flex;align-items:center;gap:14px;padding:16px 20px;cursor:pointer;border-bottom:1px solid #f0f4f8;transition:background 0.2s;" onmouseover="this.style.background='#f0f7ff'" onmouseout="this.style.background='white'">
-          <input type="radio" name="payMethod" value="venmo" style="width:18px;height:18px;accent-color:#0d2145;flex-shrink:0;"/>
+        <div onclick="payWith('venmo')" style="display:flex;align-items:center;gap:14px;padding:18px 20px;cursor:pointer;border-bottom:1px solid #f0f4f8;transition:background 0.2s;" onmouseover="this.style.background='#f0f7ff'" onmouseout="this.style.background='white'">
           <span style="font-size:26px;">&#128184;</span>
           <div style="flex:1;">
             <div style="font-family:'Quicksand',sans-serif;font-weight:700;font-size:15px;color:#0d2145;">Venmo</div>
             <div style="font-size:12px;color:#6b7a90;">@Door2DoorLaundry — fast &amp; free</div>
           </div>
-        </label>
+          <span style="font-size:18px;color:#94a3b8;">&#8594;</span>
+        </div>
 
         <!-- Cash App -->
-        <label style="display:flex;align-items:center;gap:14px;padding:16px 20px;cursor:pointer;border-bottom:1px solid #f0f4f8;transition:background 0.2s;" onmouseover="this.style.background='#f0fff4'" onmouseout="this.style.background='white'">
-          <input type="radio" name="payMethod" value="cashapp" style="width:18px;height:18px;accent-color:#0d2145;flex-shrink:0;"/>
+        <div onclick="payWith('cashapp')" style="display:flex;align-items:center;gap:14px;padding:18px 20px;cursor:pointer;border-bottom:1px solid #f0f4f8;transition:background 0.2s;" onmouseover="this.style.background='#f0fff4'" onmouseout="this.style.background='white'">
           <span style="font-size:26px;">&#128181;</span>
           <div style="flex:1;">
             <div style="font-family:'Quicksand',sans-serif;font-weight:700;font-size:15px;color:#0d2145;">Cash App</div>
             <div style="font-size:12px;color:#6b7a90;">$Door2DoorLaundry — quick &amp; simple</div>
           </div>
-        </label>
+          <span style="font-size:18px;color:#94a3b8;">&#8594;</span>
+        </div>
 
         <!-- Zelle -->
-        <label style="display:flex;align-items:center;gap:14px;padding:16px 20px;cursor:pointer;border-bottom:1px solid #f0f4f8;transition:background 0.2s;" onmouseover="this.style.background='#fefce8'" onmouseout="this.style.background='white'">
-          <input type="radio" name="payMethod" value="zelle" style="width:18px;height:18px;accent-color:#0d2145;flex-shrink:0;"/>
+        <div onclick="payWith('zelle')" style="display:flex;align-items:center;gap:14px;padding:18px 20px;cursor:pointer;transition:background 0.2s;" onmouseover="this.style.background='#fefce8'" onmouseout="this.style.background='white'">
           <span style="font-size:26px;">&#127974;</span>
           <div style="flex:1;">
             <div style="font-family:'Quicksand',sans-serif;font-weight:700;font-size:15px;color:#0d2145;">Zelle</div>
             <div style="font-size:12px;color:#6b7a90;">(260) 267-6508 — built into your bank app</div>
           </div>
-        </label>
-
-        <!-- Continue Button -->
-        <div style="padding:16px 20px;background:#f8fafc;border-top:1.5px solid #e2e8f0;">
-          <button onclick="continuePayment()" style="width:100%;padding:14px;background:linear-gradient(135deg,#16a34a,#15803d);color:white;border:none;border-radius:10px;font-family:'Quicksand',sans-serif;font-size:16px;font-weight:700;cursor:pointer;transition:opacity 0.2s;" onmouseover="this.style.opacity=0.9" onmouseout="this.style.opacity=1">
-            Continue &#8594;
-          </button>
+          <span style="font-size:18px;color:#94a3b8;">&#8594;</span>
         </div>
 
       </div>
 
-      <!-- PAYMENT RESULT PANELS -->
-
-      <!-- PayPal Panel -->
-      <div id="panel-paypal" style="display:none;margin-top:14px;background:#f0f7ff;border:1.5px solid #bfdbfe;border-radius:14px;padding:24px;text-align:center;">
-        <div style="font-size:40px;margin-bottom:10px;">&#x1F4B3;</div>
-        <div style="font-family:'Quicksand',sans-serif;font-weight:800;font-size:18px;color:#0d2145;margin-bottom:6px;">Pay with PayPal</div>
-        <div style="font-size:13px;color:#475569;margin-bottom:18px;">You will be directed to PayPal to complete your payment securely by card or PayPal balance.</div>
-        <button onclick="window.open('https://www.paypal.com/paypalme/Door2DoorLaundry','_blank')" style="display:inline-block;padding:13px 36px;background:#0070ba;color:white;border-radius:50px;font-family:'Quicksand',sans-serif;font-weight:700;font-size:15px;border:none;cursor:pointer;">Open PayPal &#8594;</button>
-        <div style="margin-top:14px;"><button onclick="resetPayment()" style="background:none;border:none;color:#6b7a90;font-size:13px;cursor:pointer;text-decoration:underline;">&#8592; Choose a different method</button></div>
-      </div>
-
-      <!-- Venmo Panel -->
-      <div id="panel-venmo" style="display:none;margin-top:14px;background:#f0f7ff;border:1.5px solid #bfdbfe;border-radius:14px;padding:24px;text-align:center;">
-        <div style="font-size:40px;margin-bottom:10px;">&#128184;</div>
-        <div style="font-family:'Quicksand',sans-serif;font-weight:800;font-size:18px;color:#0d2145;margin-bottom:6px;">Pay with Venmo</div>
-        <div style="font-size:13px;color:#475569;margin-bottom:6px;">Open your Venmo app and send payment to:</div>
-        <div style="font-family:'Quicksand',sans-serif;font-weight:800;font-size:28px;color:#1b4fa8;margin-bottom:10px;">@Door2DoorLaundry</div>
-        <div style="background:#dbeafe;border-radius:10px;padding:12px 18px;margin-bottom:14px;font-size:12px;color:#1e40af;line-height:1.6;">
-          &#128247; Open Venmo &#8594; Search <strong>@Door2DoorLaundry</strong> &#8594; Enter your total &#8594; Send
-        </div>
-        <a href="https://venmo.com/Door2DoorLaundry" target="_blank" rel="noopener" style="display:inline-block;padding:13px 36px;background:#008cff;color:white;border-radius:50px;font-family:'Quicksand',sans-serif;font-weight:700;font-size:15px;text-decoration:none;margin-bottom:14px;">Open Venmo &#8594;</a>
-        <div style="margin-top:6px;"><button onclick="resetPayment()" style="background:none;border:none;color:#6b7a90;font-size:13px;cursor:pointer;text-decoration:underline;">&#8592; Choose a different method</button></div>
-      </div>
-
-      <!-- Cash App Panel -->
-      <div id="panel-cashapp" style="display:none;margin-top:14px;background:#f0fff4;border:1.5px solid #a7f3d0;border-radius:14px;padding:24px;text-align:center;">
-        <div style="font-size:40px;margin-bottom:10px;">&#128181;</div>
-        <div style="font-family:'Quicksand',sans-serif;font-weight:800;font-size:18px;color:#0d2145;margin-bottom:6px;">Pay with Cash App</div>
-        <div style="font-size:13px;color:#475569;margin-bottom:6px;">Open your Cash App and send payment to:</div>
-        <div style="font-family:'Quicksand',sans-serif;font-weight:800;font-size:28px;color:#16a34a;margin-bottom:10px;">$Door2DoorLaundry</div>
-        <div style="background:#dcfce7;border-radius:10px;padding:12px 18px;margin-bottom:14px;font-size:12px;color:#166534;line-height:1.6;">
-          &#128247; Open Cash App &#8594; Tap the <strong>$</strong> icon &#8594; Search <strong>$Door2DoorLaundry</strong> &#8594; Enter your total &#8594; Pay
-        </div>
-        <a href="https://cash.app/$Door2DoorLaundry" target="_blank" rel="noopener" style="display:inline-block;padding:13px 36px;background:#00d64f;color:white;border-radius:50px;font-family:'Quicksand',sans-serif;font-weight:700;font-size:15px;text-decoration:none;margin-bottom:14px;">Open Cash App &#8594;</a>
-        <div style="margin-top:6px;"><button onclick="resetPayment()" style="background:none;border:none;color:#6b7a90;font-size:13px;cursor:pointer;text-decoration:underline;">&#8592; Choose a different method</button></div>
-      </div>
-
-      <!-- Zelle Panel -->
+      <!-- Zelle Info Panel (shown only for Zelle since there is no direct URL) -->
       <div id="panel-zelle" style="display:none;margin-top:14px;background:#fefce8;border:1.5px solid #fde047;border-radius:14px;padding:24px;text-align:center;">
         <div style="font-size:40px;margin-bottom:10px;">&#127974;</div>
         <div style="font-family:'Quicksand',sans-serif;font-weight:800;font-size:18px;color:#0d2145;margin-bottom:6px;">Pay with Zelle</div>
         <div style="font-size:13px;color:#475569;margin-bottom:6px;">Open your bank app and send to:</div>
         <div style="font-family:'Quicksand',sans-serif;font-weight:800;font-size:24px;color:#92400e;margin-bottom:8px;">(260) 267-6508</div>
-        <div style="font-size:12px;color:#6b7a90;margin-bottom:18px;">Search for Zelle in your bank app — most major banks support it</div>
-        <div style="margin-top:6px;"><button onclick="resetPayment()" style="background:none;border:none;color:#6b7a90;font-size:13px;cursor:pointer;text-decoration:underline;">&#8592; Choose a different method</button></div>
+        <div style="font-size:12px;color:#6b7a90;margin-bottom:18px;">Search for Zelle in your bank app — most major banks support it.</div>
+        <button onclick="resetPayment()" style="background:none;border:none;color:#6b7a90;font-size:13px;cursor:pointer;text-decoration:underline;">&#8592; Choose a different method</button>
       </div>
 
     </div>
@@ -1008,14 +964,13 @@
     }
   }
 
-  function continuePayment() {
-    var selected = document.querySelector('input[name="payMethod"]:checked');
-    if (!selected) {
-      alert('Please select a payment method to continue.');
-      return;
-    }
-    var method = selected.value;
+  var PAYMENT_URLS = {
+    paypal: 'https://www.paypal.com/paypalme/Door2DoorLaundry',
+    venmo: 'https://venmo.com/Door2DoorLaundry',
+    cashapp: 'https://cash.app/$Door2DoorLaundry'
+  };
 
+  function payWith(method) {
     // Validate household booking fields before submitting
     var firstName = document.getElementById('firstName').value.trim();
     var lastName = document.getElementById('lastName').value.trim();
@@ -1052,42 +1007,42 @@
       payment_method: method
     };
 
+    // Open payment URL immediately (in a new tab) so popup blockers don't fire.
+    // Zelle has no direct URL — we show the info panel instead.
+    var popup = null;
+    if (PAYMENT_URLS[method]) {
+      popup = window.open(PAYMENT_URLS[method], '_blank');
+    }
+
     fetch(FORMSPREE_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify(payload)
     }).then(function(r) {
       if (!r.ok) throw new Error('Network');
-      var panels = ['paypal','venmo','cashapp','zelle'];
-      panels.forEach(function(p) {
-        var el = document.getElementById('panel-' + p);
-        if (el) el.style.display = 'none';
-      });
-      var panel = document.getElementById('panel-' + method);
-      if (panel) {
-        panel.style.display = 'block';
-        panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      if (method === 'zelle') {
+        document.getElementById('payOptions').style.display = 'none';
+        var zp = document.getElementById('panel-zelle');
+        if (zp) {
+          zp.style.display = 'block';
+          zp.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        var arrow = document.getElementById('payArrow');
+        if (arrow) arrow.style.transform = 'rotate(0deg)';
       }
-      document.getElementById('payOptions').style.display = 'none';
-      var arrow = document.getElementById('payArrow');
-      if (arrow) arrow.style.transform = 'rotate(0deg)';
     }).catch(function() {
+      if (popup) popup.close();
       alert('Something went wrong submitting your booking. Please try again or call (260) 267-6508.');
     });
   }
 
   function resetPayment() {
-    var panels = ['paypal','venmo','cashapp','zelle'];
-    panels.forEach(function(p) {
-      var el = document.getElementById('panel-' + p);
-      if (el) el.style.display = 'none';
-    });
+    var zp = document.getElementById('panel-zelle');
+    if (zp) zp.style.display = 'none';
     var opts = document.getElementById('payOptions');
     if (opts) opts.style.display = 'block';
     var arrow = document.getElementById('payArrow');
     if (arrow) arrow.style.transform = 'rotate(180deg)';
-    var radios = document.querySelectorAll('input[name="payMethod"]');
-    radios.forEach(function(r) { r.checked = false; });
   }
 </script>
 
