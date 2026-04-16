@@ -594,19 +594,12 @@ footer { background: var(--navy-dark); color: rgba(255,255,255,0.65); padding: 6
 </div>
 
 <div class="card reveal">
-<div class="card-title">📅 Pickup Day &amp; Time</div>
-<div class="card-sub">We pick up Monday, Wednesday, and Friday only · 7:00 AM – 11:00 AM. Please have your bag(s) on your porch or doorstep before your pickup window.</div>
+<div class="card-title">📅 Pickup Day</div>
+<div class="card-sub">We pick up Monday, Wednesday, and Friday. Please have your bag(s) out by 7:00 AM on your chosen day.</div>
 <div class="days-grid">
-<div class="day-btn" onclick="pickDay(this,'Monday')"><div class="day-name">Monday</div><div class="day-sub">7AM – 11AM</div></div>
-<div class="day-btn" onclick="pickDay(this,'Wednesday')"><div class="day-name">Wednesday</div><div class="day-sub">7AM – 11AM</div></div>
-<div class="day-btn" onclick="pickDay(this,'Friday')"><div class="day-name">Friday</div><div class="day-sub">7AM – 11AM</div></div>
-</div>
-<div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:0.72rem;letter-spacing:0.05em;text-transform:uppercase;color:var(--navy);margin-bottom:10px;">Choose Your Time Window</div>
-<div class="time-grid">
-<div class="time-btn" onclick="pickTime(this,'7:00 – 8:00 AM')"><div class="t-time">7:00 – 8:00 AM</div><div class="t-lbl">Early morning</div></div>
-<div class="time-btn" onclick="pickTime(this,'8:00 – 9:00 AM')"><div class="t-time">8:00 – 9:00 AM</div><div class="t-lbl">Morning</div></div>
-<div class="time-btn" onclick="pickTime(this,'9:00 – 10:00 AM')"><div class="t-time">9:00 – 10:00 AM</div><div class="t-lbl">Mid morning</div></div>
-<div class="time-btn" onclick="pickTime(this,'10:00 – 11:00 AM')"><div class="t-time">10:00 – 11:00 AM</div><div class="t-lbl">Late morning</div></div>
+<div class="day-btn" onclick="pickDay(this,'Monday')"><div class="day-name">Monday</div><div class="day-sub">Bag out by 7AM</div></div>
+<div class="day-btn" onclick="pickDay(this,'Wednesday')"><div class="day-name">Wednesday</div><div class="day-sub">Bag out by 7AM</div></div>
+<div class="day-btn" onclick="pickDay(this,'Friday')"><div class="day-name">Friday</div><div class="day-sub">Bag out by 7AM</div></div>
 </div>
 </div>
 
@@ -655,7 +648,7 @@ footer { background: var(--navy-dark); color: rgba(255,255,255,0.65); padding: 6
 <div class="sum-line" id="sStains" style="display:none;"><span>Stain pretreatment</span><span style="color:var(--green);">FREE</span></div>
 <div class="sum-line"><span>Pickup &amp; delivery</span><span style="color:var(--green);">FREE</span></div>
 <div class="sum-total"><span>Estimated Total</span><span id="sTotal">$35.00</span></div>
-<div class="sum-pickup"><strong>Pickup:</strong> <span id="sPickup">No day/time selected yet</span></div>
+<div class="sum-pickup"><strong>Pickup:</strong> <span id="sPickup">No day selected yet</span></div>
 </div>
 </div>
 
@@ -1063,7 +1056,6 @@ if (btns[0]) btns[0].classList.remove('active');
 };
 
 var chosenDay = '';
-var chosenTime = '';
 
 window.pickDay = function(el, day) {
 var btns = document.querySelectorAll('.day-btn');
@@ -1073,20 +1065,11 @@ chosenDay = day;
 refreshPickup();
 };
 
-window.pickTime = function(el, time) {
-var btns = document.querySelectorAll('.time-btn');
-for (var i = 0; i < btns.length; i++) btns[i].classList.remove('sel');
-el.classList.add('sel');
-chosenTime = time;
-refreshPickup();
-};
-
 function refreshPickup() {
 var el = document.getElementById('sPickup');
 if (!el) return;
-if (chosenDay && chosenTime) el.textContent = chosenDay + ' - ' + chosenTime;
-else if (chosenDay) el.textContent = chosenDay + ' - No time selected';
-else el.textContent = 'No day/time selected yet';
+if (chosenDay) el.textContent = chosenDay + ' — bag out by 7:00 AM';
+else el.textContent = 'No day selected yet';
 }
 
 window.calcTotal = function() {
@@ -1160,7 +1143,6 @@ if (!ph || !ph.value.trim()) { alert('Please enter your phone number.'); return;
 if (!ad || !ad.value.trim()) { alert('Please enter your address.'); return; }
 if (!dt || !dt.value) { alert('Please select a detergent type.'); return; }
 if (!chosenDay) { alert('Please select a pickup day.'); return; }
-if (!chosenTime) { alert('Please select a time window.'); return; }
 if (!bc || !bc.checked) { alert('Please confirm no biohazardous materials.'); return; }
 if (!tc || !tc.checked) { alert('Please agree to the Terms and Conditions.'); return; }
 
@@ -1178,7 +1160,7 @@ name: fn.value.trim() + ' ' + ln.value.trim(),
 phone: ph.value.trim(),
 address: ad.value.trim(),
 pickup_day: chosenDay,
-pickup_time: chosenTime,
+pickup_time: 'Bag out by 7:00 AM',
 number_of_bags: bags,
 detergent: dt.value,
 water_temp: temp,
